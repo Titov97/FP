@@ -17,7 +17,9 @@ class Ingredients(models.Model):
 
 
 class Recipe(models.Model):
-    pass
+    recipe_name = models.CharField(max_length=128)
+    created_by = models.CharField(max_length=128)
+
 
 
 class Menu(models.Model):
