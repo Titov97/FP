@@ -4,7 +4,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.views import View
 
-from bistro_app.models import Ingredients, Recipe, Menu, Order
+from bistro_app.models import Ingredient, Recipe, Menu, Order
 
 
 def hello(request):
@@ -14,7 +14,7 @@ def hello(request):
 
 class IngredientsView(View):
     def get(self, request):
-        return render(request, template_name="ingredients.html", context={"ingredients": Ingredients.objects.all()})
+        return render(request, template_name="ingredients.html", context={"ingredients": Ingredient.objects.all()})
 
 
 class RecipeView(View):

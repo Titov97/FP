@@ -3,9 +3,10 @@ from django.contrib import admin
 
 # Register your models here.
 # from Bistro_P.bistro_app.models import *
-from bistro_app.models import Ingredients, Recipe, Menu, Order
+from bistro_app.models import *
 
-admin.site.register(Ingredients)
+admin.site.register(Ingredient)
 admin.site.register(Recipe)
 admin.site.register(Menu)
 admin.site.register(Order)
+admin.site.register(RecipeIngredient)
