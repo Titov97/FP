@@ -7,9 +7,13 @@ from django.views import View
 from bistro_app.models import Ingredient, Recipe, Menu, Order
 
 
-def hello(request):
-    query = request.GET.get('query', '')
-    return HttpResponse('Hello')
+# def hello(request):
+#     query = request.GET.get('query', '')
+#     return HttpResponse('Hello')
+def home(request):
+   return render(request, template_name='home.html')
+
+
 
 
 class IngredientsView(View):
