@@ -20,3 +20,14 @@ Filip:
 - login
 - register
 - recover_pass flow (4 templates)
+
+
+idei de lucru:
+
+Avantaje utilizator: - ingredientele mele
+                     - retetele mele
+                     - search retete
+                     - google maps
+                     - retete favorite
+                     - promotie/discount pt utilizator
+
