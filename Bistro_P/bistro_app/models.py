@@ -47,7 +47,6 @@ class Menu(models.Model):
     sale_price = models.FloatField()
 
 
-
 class MenuItem(models.Model):
     recipe = models.ForeignKey(RecipeIngredient, on_delete=models.CASCADE)
     quantity = models.FloatField()
