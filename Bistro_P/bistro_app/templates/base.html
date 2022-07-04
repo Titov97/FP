@@ -191,16 +191,36 @@
                     <li class="nav-item">
                         <a class="nav-link waves-effect waves-light"><i class="fab fa-google-plus-g"></i></a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect waves-light"><i class="fab fa-facebook"></i></a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-unique"
                              aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item waves-effect waves-light" href="#">Action</a>
-                            <a class="dropdown-item waves-effect waves-light" href="#">Another action</a>
-                            <a class="dropdown-item waves-effect waves-light" href="#">Something else here</a>
+                            <a class="dropdown-item waves-effect waves-light" href="#">Login</a>
+                            <a class="dropdown-item waves-effect waves-light" href="#">Sign Up</a>
+                            <a class="dropdown-item waves-effect waves-light" href="#">Recovery Passwords</a>
+                            <a class="dropdown-item waves-effect waves-light" href="#">My Ingredients</a>
+                            <a class="dropdown-item waves-effect waves-light" href="#">My Recipes</a>
+                            <a class="dropdown-item waves-effect waves-light" href="#">My favourites Recipes</a>
+                            <a class="dropdown-item waves-effect waves-light" href="#">Discount</a>
                         </div>
+                    <li>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-unique"
+                             aria-labelledby="navbarDropdownMenuLink">
+                    </div>
+                    </li>
+                        <li>
+                        <form id="form" role="search">
+                            <input type="search" id="query" name="q"
+                                   placeholder="Search..."
+                                   aria-label="Search through site content">
+                            <button>Search</button>
+                        </form>
+                        </li>
                     </li>
                 </ul>
             </div>
@@ -248,9 +268,8 @@
             <li class="payment">
                 <i class="fab fa-cc-visa fa-2x" aria-hidden="true"></i>
                 <i class="fab fa-cc-mastercard fa-2x" aria-hidden="true"></i>
-                <!--        <i class="fab fa-cc-revolut fa-2x" aria-hidden="true"></i>-->
+                <i class="fas fa-cc-revolut fa-2x" aria-hidden="true"></i>
                 <i class="fas fa-money-bill-alt fa-2x" aria-hidden="true"></i>
-
             </li>
         </ul>
     </div>
@@ -362,8 +381,8 @@
         <ul class="list-unstyled list-inline">
             <head>
                 <!-- Include Bootstrap for styling -->
-<!--                <link rel="stylesheet" href=-->
-<!--                        "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>-->
+                <!--                <link rel="stylesheet" href=-->
+                <!--                        "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>-->
 
                 <style>
                     .qr-code {
@@ -384,7 +403,7 @@
         <!-- Get a Placeholder image initially,
          this will change according to the
          data entered later -->
-        <img src="../static/Capture.PNG" height="150" width="182.5">
+        <img src="../static/QRCODE-v2.PNG" height="160" width="182.5"/>
 
         <!--                     "https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0"-->
         <!--                class="qr-code img-thumbnail img-responsive" />-->
