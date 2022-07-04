@@ -1,12 +1,12 @@
 from django import forms
 from django.core.exceptions import ValidationError
 
-from bistro_app.models import Ingredients
+from bistro_app.models import Ingredient
 
 
 class IngredientsForm(forms.ModelForm):
     class Meta:
-        model = Ingredients
+        model = Ingredient
         fields = '__all__'
 
     ingredients = forms.CharField(widget=forms.TextInput(
@@ -73,3 +73,7 @@ class IngredientsForm(forms.ModelForm):
     ))
 
 
+class ContactForm(forms.ModelForm):
+    from_email = forms.EmailField(required=True)
+    subject = forms.CharField(required=True)
+    message = forms.CharField(widget=forms.Textarea, required=True)
