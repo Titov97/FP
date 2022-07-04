@@ -16,15 +16,17 @@ class IngredientsForm(forms.ModelForm):
         }
     ))
 
-    quantity_stock = forms.FloatField(required=True, min_value=0, widget=forms.NumberInput(
+    quantity_stock = forms.FloatField(required=True, widget=forms.NumberInput(
         attrs={
+            'min':'0',
             'class': 'form-control',
             'placeholder': 'Quantity_stock'
         }
     ))
 
-    unit = forms.CharField(min_value=0, widget=forms.NumberInput(
+    unit = forms.CharField(widget=forms.NumberInput(
         attrs={
+            'min':'0',
             'class': 'form-control',
             'placeholder': 'Units'
         }

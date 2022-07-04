@@ -30,4 +30,11 @@ Avantaje utilizator: - ingredientele mele
                      - google maps
                      - retete favorite
                      - promotie/discount pt utilizator
+                     - import de ingrediente si retete din csv sau xsl
+
+noi taskuri :
+- de mutat in footer contact, fb, twiter, google plus
+- de facut link la qr code 
+- self reference foreign key pentru categorii
+- 
 

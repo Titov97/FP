@@ -48,8 +48,9 @@
 
     pip
     .navbar-brand {
-        font-size: 50px;
+        font-size: 100px;
         font-family: Castellar, emoji;
+        margin-left:px ;
     }
 
     .navbar {
@@ -147,7 +148,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent-3">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link waves-effect waves-light" href="home.html">Home <span
+                        <a class="nav-link waves-effect waves-light" href="{% url 'home' %}">Home <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
@@ -209,18 +210,18 @@
                             <a class="dropdown-item waves-effect waves-light" href="#">Discount</a>
                         </div>
                     <li>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-unique"
+                        <div class="dropdown-menu dropdown-menu-right dropdown-unique"
                              aria-labelledby="navbarDropdownMenuLink">
-                    </div>
+                        </div>
                     </li>
-                        <li>
+                    <li>
                         <form id="form" role="search">
                             <input type="search" id="query" name="q"
                                    placeholder="Search..."
                                    aria-label="Search through site content">
                             <button>Search</button>
                         </form>
-                        </li>
+                    </li>
                     </li>
                 </ul>
             </div>
@@ -268,7 +269,7 @@
             <li class="payment">
                 <i class="fab fa-cc-visa fa-2x" aria-hidden="true"></i>
                 <i class="fab fa-cc-mastercard fa-2x" aria-hidden="true"></i>
-                <i class="fas fa-cc-revolut fa-2x" aria-hidden="true"></i>
+{#                <i class="fas fa-cc-revolut fa-2x" aria-hidden="true"></i>#}
                 <i class="fas fa-money-bill-alt fa-2x" aria-hidden="true"></i>
             </li>
         </ul>
@@ -740,7 +741,7 @@
 <!--&lt;!&ndash;</nav>&ndash;&gt;-->
 <!--<div class="container">-->
 <!--    {% block content %}-->
-<!--    {% endblock %}-->
+    <!--    {% endblock %}-->
 <!--</div>-->
 
 </body>
