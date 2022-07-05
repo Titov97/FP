@@ -184,19 +184,29 @@
                     <li class="nav-item">
                         <a class="nav-link waves-effect waves-light"><i class="fab fa-facebook"></i></a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink"
+                    <li class="nav-item btn-group">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-4"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-unique"
-                             aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item waves-effect waves-light" href="#">Login</a>
-                            <a class="dropdown-item waves-effect waves-light" href="#">Sign Up</a>
-                            <a class="dropdown-item waves-effect waves-light" href="#">Recovery Passwords</a>
-                            <a class="dropdown-item waves-effect waves-light" href="#">My Ingredients</a>
-                            <a class="dropdown-item waves-effect waves-light" href="#">My Recipes</a>
-                            <a class="dropdown-item waves-effect waves-light" href="#">My favourites Recipes</a>
-                            <a class="dropdown-item waves-effect waves-light" href="#">Discount</a>
+                        <div class="navbar-nav ml-auto">
+                            <div class="nav-item dropdown">
+                                {% if User.is_authenticated %}
+                                    <a class="nav-link active dropdown-toggle "  href="#" data-toggle="dropdown">
+                                        {% if user.first_name %}Hello, {{ user.first_name }}!
+                                        {% else %}Hello, {{ user.username }}!{% endif %}
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item text-right"  href="{% url 'logout' %}">Logout</a>
+                                        <a class="dropdown-item text-right" href="{% url 'change_pass' %}">Change
+                                            password</a>
+                                    </div>
+                                {% else %}
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item text-right" href="{% url 'login' %}">Login</a>
+                                        <a class="dropdown-item text-right" href="{% url 'sign_up' %}">Sign up</a>
+                                    </div>
+                                {% endif %}
+                            </div>
                         </div>
                     <li>
                         <div class="dropdown-menu dropdown-menu-right dropdown-unique"
