@@ -37,7 +37,7 @@ class OrderView(View):
         return render(request, template_name="order.html", context={"orders": Order.objects.all()})
 
 
-def contactView(request):
+def contact_view(request):
     if request.method == 'GET':
         form = ContactForm()
     else:
@@ -54,5 +54,5 @@ def contactView(request):
     return render(request, "contact.html", {'form': form})
 
 
-def successView(request):
+def success_view(request):
     return HttpResponse('Success! Thank you for your message.')
