@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 #TODO RADU - admin
 
 # Register your models here.
@@ -10,3 +11,4 @@ admin.site.register(Recipe)
 admin.site.register(Menu)
 admin.site.register(Order)
 admin.site.register(RecipeIngredient)
+

@@ -1,10 +1,13 @@
+from django.contrib.auth.views import PasswordChangeView
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
-from .forms import ContactForm
+from django.urls import reverse_lazy
 
+from .forms import ContactForm, SignUpForm
+from django.views.generic import CreateView
 from django.views import View
 
 from bistro_app.models import Ingredient, Recipe, Menu, Order
@@ -56,3 +59,16 @@ def contact_view(request):
 
 def success_view(request):
     return HttpResponse('Success! Thank you for your message.')
+
+
+class SignUpView(CreateView):
+    template_name = 'registration/sign_up.html'
+    success_url = reverse_lazy('home')
+    form_class = SignUpForm
+
+
+class MyPasswordChangeView(PasswordChangeView):
+    template_name = 'registration/change_pass.html'
+    success_url = reverse_lazy('login')
+
+
