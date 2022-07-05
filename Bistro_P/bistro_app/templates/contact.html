@@ -1,16 +1,19 @@
 {% extends 'base.html' %}
-    {% csrf_token %}
+{#{% csrf_token %}#}
 
-{% block content%}
+{% block content %}
     <h1>Welcome to the Contact page</h1>
-        <p>This keeps contact form.</p>
+    <p>This keeps contact form.</p>
 
     <h2>Contact Us</h2>
-    <form method="post">
-{#    {% csrf_token %}#}
-    {{ form.as_p }}
-    <div class="form-actions">
-      <button type="submit">Send</button>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+        </form>
     </div>
-    </form>
+    <div class="form-actions">
+        <button type="submit">Send</button>
+    </div>
+
 {% endblock %}

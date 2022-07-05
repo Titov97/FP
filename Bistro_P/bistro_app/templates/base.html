@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 {% load static %}
-{% csrf_token %}
 
 <html lang="en">
 <head>
@@ -9,132 +8,122 @@
     <title>Bistro_P</title>
     <link rel="stylesheet" type="text/css" href="{% static 'homestyle.css' %}">
 
+    <base target="_parent">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
+    <link rel="stylesheet"
+          href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/css/mdb.min.css">
+    <link rel="stylesheet"
+          href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/docs-app/css/compiled-addons-4.20.0.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/mdb-plugins-gathered.min.css">
 
-    <!--          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">-->
-    <!--    <style>-->
-    <!--        #search-form {-->
-    <!--            margin-left: auto;-->
-    <!--        }-->
 
-    <!--        {-->
-    <!--        %-->
-    <!--        block-->
-    <!--        style-->
-    <!--        %-->
-    <!--        }-->
-    <!--        {-->
-    <!--        %-->
-    <!--        endblock-->
-    <!--        %-->
-    <!--        }-->
-    <!--    </style>-->
+    <style>
+        .qr-code {
+            max-width: 200px;
+            margin: 10px;
+        }
 
+        /* TEMPLATE STYLES */
+
+        .nopadding {
+            margin-top: 0 !important;
+        }
+
+        .navbar-brand {
+            font-size: 100px;
+            font-family: Castellar, emoji;
+            margin-left: 5px;
+        }
+
+        .navbar {
+            background-color: #49071c;
+        }
+
+        footer.page-footer {
+            background-color: #49071c;
+            margin-top: 2rem;
+        }
+
+        .pattern-4 {
+            background-attachment: fixed;
+        }
+
+        .view {
+            background: url("https://mdbootstrap.com/img/Photos/Horizontal/Food/full%20page/9.jpg") no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            height: 100vh;
+        }
+
+        .full-bg-img {
+            color: #fff;
+        }
+
+        .payment .fa:not(:first-child) {
+            margin-left: 10px;
+            color: rgba(255, 255, 255, .8);
+        }
+
+        input[type="text"]:focus:not([readonly]) {
+            border-color: #C00;
+            box-shadow: 0 1px 0 0 #C00;
+            color: #fff;
+        }
+
+        input[type="text"]:not([readonly]) + label {
+            color: rgba(255, 255, 255, .65);
+        }
+
+        input[type="text"]:focus:not([readonly]) + label {
+            color: #fff;
+        }
+
+        .navbar .btn-group .dropdown-menu a:hover {
+            color: #000 !important;
+        }
+
+        .navbar .btn-group .dropdown-menu a:active {
+            color: #fff !important;
+        }
+
+        /* Chart.js */
+        @-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+
+        {% block style %}
+
+        {% endblock %}
+    </style>
 </head>
-<base target="_parent">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
-<link rel="stylesheet" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/css/mdb.min.css">
-<link rel="stylesheet"
-      href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/docs-app/css/compiled-addons-4.20.0.min.css">
-<link rel="stylesheet" type="text/css"
-      href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/mdb-plugins-gathered.min.css">
-<style>
-    /* TEMPLATE STYLES */
 
-    .nopadding {
-        margin-top: 0 !important;
-    }
 
-    pip
-    .navbar-brand {
-        font-size: 100px;
-        font-family: Castellar, emoji;
-        margin-left:px ;
-    }
-
-    .navbar {
-        background-color: #49071c;
-    }
-
-    footer.page-footer {
-        background-color: #49071c;
-        margin-top: 2rem;
-    }
-
-    .pattern-4 {
-        background-attachment: fixed;
-    }
-
-    .view {
-        background: url("https://mdbootstrap.com/img/Photos/Horizontal/Food/full%20page/9.jpg") no-repeat center center;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        height: 100vh;
-    }
-
-    .full-bg-img {
-        color: #fff;
-    }
-
-    .payment .fa:not(:first-child) {
-        margin-left: 10px;
-        color: rgba(255, 255, 255, .8);
-    }
-
-    input[type="text"]:focus:not([readonly]) {
-        border-color: #C00;
-        box-shadow: 0 1px 0 0 #C00;
-        color: #fff;
-    }
-
-    input[type="text"]:not([readonly]) + label {
-        color: rgba(255, 255, 255, .65);
-    }
-
-    input[type="text"]:focus:not([readonly]) + label {
-        color: #fff;
-    }
-
-    .navbar .btn-group .dropdown-menu a:hover {
-        color: #000 !important;
-    }
-
-    .navbar .btn-group .dropdown-menu a:active {
-        color: #fff !important;
-    }
-</style>
-<style>
-    /* Chart.js */
-    @-webkit-keyframes chartjs-render-animation {
-        from {
-            opacity: 0.99
-        }
-        to {
-            opacity: 1
-        }
-    }
-
-    @keyframes chartjs-render-animation {
-        from {
-            opacity: 0.99
-        }
-        to {
-            opacity: 1
-        }
-    }
-
-    .chartjs-render-monitor {
-        -webkit-animation: chartjs-render-animation 0.001s;
-        animation: chartjs-render-animation 0.001s;
-    }
-</style>
-</head>
 <body><!--Navigation & Intro-->
 <header>
-
 
     <!--Navbar-->
     <nav class=" navbar navbar-expand-lg navbar-dark">
@@ -269,14 +258,16 @@
             <li class="payment">
                 <i class="fab fa-cc-visa fa-2x" aria-hidden="true"></i>
                 <i class="fab fa-cc-mastercard fa-2x" aria-hidden="true"></i>
-{#                <i class="fas fa-cc-revolut fa-2x" aria-hidden="true"></i>#}
+                <i class="fas fa-cc-revolut fa-2x" aria-hidden="true"></i>
                 <i class="fas fa-money-bill-alt fa-2x" aria-hidden="true"></i>
             </li>
         </ul>
     </div>
 </div>
 <!--/.Mask-->
+{% block content %}
 
+{% endblock %}
 <!--Footer-->
 <footer class="page-footer text-center text-md-left mt-0 pt-4">
     <!--Footer links-->
@@ -380,109 +371,69 @@
         <h4 class="mb-4">Feedback QR CODE</h4>
         <h5 class="mb-4">Let us know what you think about us!!!</h5>
         <ul class="list-unstyled list-inline">
-            <head>
-                <!-- Include Bootstrap for styling -->
-                <!--                <link rel="stylesheet" href=-->
-                <!--                        "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>-->
 
-                <style>
-                    .qr-code {
-                        max-width: 200px;
-                        margin: 10px;
-                    }
-                </style>
+            <!-- Include Bootstrap for styling -->
+            <!--                <link rel="stylesheet" href=-->
+            <!--                        "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>-->
 
-                <title>QR Code Generator</title>
-            </head>
+
+            {#            <title>QR Code Generator</title>#}
+
         </ul>
     </div>
     <!--            <body>-->
-</html>
-<div class="container-fluid">
-    <div class="text-center">
 
-        <!-- Get a Placeholder image initially,
-         this will change according to the
-         data entered later -->
-        <img src="../static/QRCODE-v2.PNG" height="160" width="182.5"/>
+    <div class="container-fluid">
+        <div class="text-center">
 
-        <!--                     "https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0"-->
-        <!--                class="qr-code img-thumbnail img-responsive" />-->
+            <!-- Get a Placeholder image initially,
+             this will change according to the
+             data entered later -->
+            <img src="{% static 'QRCODE-v2.PNG' %}" height="160" width="160" alt="QR code form"/>
+
+            <!--                     "https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0"-->
+            <!--                class="qr-code img-thumbnail img-responsive" />-->
+        </div>
+
+        <!--    <div class="form-horizontal">-->
+        <!--        <div class="form-group">-->
+        <!--            <label class="control-label col-sm-2"-->
+        <!--                   for="content">-->
+        <!--                Content:-->
+        <!--            </label>-->
+        <!--            <div class="col-sm-10">-->
+
+        <!--                &lt;!&ndash; Input box to enter the-->
+        <!--                    required data &ndash;&gt;-->
+        <!--                <input type="text" size="60"-->
+        <!--                       maxlength="60" class="form-control"-->
+        <!--                       id="content" placeholder="Enter content"/>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--        <div class="form-group">-->
+        <!--            <div class="col-sm-offset-2 col-sm-10">-->
+
+        <!--                &lt;!&ndash; Button to generate QR Code for-->
+        <!--                 the entered data &ndash;&gt;-->
+        <!--                <button type="button" class=-->
+        <!--                        "btn btn-default" id="generate">-->
+        <!--                    Generate-->
+        <!--                </button>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--    </div>-->
     </div>
 
-    <!--    <div class="form-horizontal">-->
-    <!--        <div class="form-group">-->
-    <!--            <label class="control-label col-sm-2"-->
-    <!--                   for="content">-->
-    <!--                Content:-->
-    <!--            </label>-->
-    <!--            <div class="col-sm-10">-->
 
-    <!--                &lt;!&ndash; Input box to enter the-->
-    <!--                    required data &ndash;&gt;-->
-    <!--                <input type="text" size="60"-->
-    <!--                       maxlength="60" class="form-control"-->
-    <!--                       id="content" placeholder="Enter content"/>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--        <div class="form-group">-->
-    <!--            <div class="col-sm-offset-2 col-sm-10">-->
+    <!--/.Call to action-->
 
-    <!--                &lt;!&ndash; Button to generate QR Code for-->
-    <!--                 the entered data &ndash;&gt;-->
-    <!--                <button type="button" class=-->
-    <!--                        "btn btn-default" id="generate">-->
-    <!--                    Generate-->
-    <!--                </button>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--    </div>-->
-</div>
-<script src=
-                "https://code.jquery.com/jquery-3.5.1.js">
-</script>
-
-<!--<script>-->
-<!--    // Function to HTML encode the text-->
-<!--    // This creates a new hidden element,-->
-<!--    // inserts the given text into it-->
-<!--    // and outputs it out as HTML-->
-<!--    function htmlEncode(value) {-->
-<!--        return $('<div/>').text(value)-->
-<!--            .html();-->
-<!--    }-->
-
-<!--    $(function () {-->
-
-<!--        // Specify an onclick function-->
-<!--        // for the generate button-->
-<!--        $('#generate').click(function () {-->
-
-<!--            // Generate the link that would be-->
-<!--            // used to generate the QR Code-->
-<!--            // with the given data-->
-<!--            let finalURL =-->
-<!--                'https://chart.googleapis.com/chart?cht=qr&chl=' +-->
-<!--                htmlEncode($('#content').val()) +-->
-<!--                '&chs=160x160&chld=L|0'-->
-
-<!--            // Replace the src of the image with-->
-<!--            // the QR code image-->
-<!--            $('.qr-code').attr('src', finalURL);-->
-<!--        });-->
-<!--    });-->
-<!--</script>-->
-</ul>
-</div>
-<!--/.Call to action-->
-
-<!--Copyright-->
-<div class="footer-copyright py-3 text-center">
-    <div class="containter-fluid">
-        © 2022 Copyright: <a href="https://www.MDBootstrap.com"> Bistro_P </a>
+    <!--Copyright-->
+    <div class="footer-copyright py-3 text-center">
+        <div class="containter-fluid">
+            © 2022 Copyright: <a href="https://www.MDBootstrap.com"> Bistro_P </a>
+        </div>
     </div>
-</div>
-<!--/.Copyright-->
+    <!--/.Copyright-->
 </footer>
 <!--/.Footer-->
 <script type="text/javascript"
@@ -501,248 +452,9 @@
     new WOW().init();
 }</script>
 <div class="hiddendiv common"></div>
+<script src="https://code.jquery.com/jquery-3.5.1.js">
+</script>
 </body>
 
-<!--<body>-->
-<!--<nav class=" navbar navbar-expand-lg navbar-dark">-->
-<!--    <div class="container">-->
 
-<!--        <a class="navbar-brand waves-effect waves-light" href="#">Navbar</a>-->
-<!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-3"-->
-<!--                aria-controls="navbarSupportedContent-3" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--            <span class="navbar-toggler-icon"></span>-->
-<!--        </button>-->
-<!--        <div class="collapse navbar-collapse" id="navbarSupportedContent-3">-->
-<!--            <ul class="navbar-nav mr-auto">-->
-<!--                <li class="nav-item active">-->
-<!--                    <a class="nav-link waves-effect waves-light" href="#">Home <span-->
-<!--                            class="sr-only">(current)</span></a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link waves-effect waves-light" href="#">Features</a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link waves-effect waves-light" href="#">Pricing</a>-->
-<!--                </li>-->
-<!--                <li class="nav-item btn-group">-->
-<!--                    <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-3"-->
-<!--                       data-toggle="dropdown"-->
-<!--                       aria-haspopup="true" aria-expanded="false">Dropdown-->
-<!--                    </a>-->
-<!--                    <div class="dropdown-menu dropdown-menu-right dropdown-unique"-->
-<!--                         aria-labelledby="navbarDropdownMenuLink-3">-->
-<!--                        <a class="dropdown-item waves-effect waves-light" href="#">Action</a>-->
-<!--                        <a class="dropdown-item waves-effect waves-light" href="#">Another action</a>-->
-<!--                        <a class="dropdown-item waves-effect waves-light" href="#">Something else here</a>-->
-<!--                    </div>-->
-<!--                </li>-->
-<!--            </ul>-->
-<!--            <ul class="navbar-nav ml-auto nav-flex-icons">-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link waves-effect waves-light"><i class="fab fa-twitter"></i></a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link waves-effect waves-light"><i class="fab fa-google-plus-g"></i></a>-->
-<!--                </li>-->
-<!--                <li class="nav-item dropdown">-->
-<!--                    <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink"-->
-<!--                       data-toggle="dropdown"-->
-<!--                       aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i>-->
-<!--                    </a>-->
-<!--                    <div class="dropdown-menu dropdown-menu-right dropdown-unique"-->
-<!--                         aria-labelledby="navbarDropdownMenuLink">-->
-<!--                        <a class="dropdown-item waves-effect waves-light" href="#">Action</a>-->
-<!--                        <a class="dropdown-item waves-effect waves-light" href="#">Another action</a>-->
-<!--                        <a class="dropdown-item waves-effect waves-light" href="#">Something else here</a>-->
-<!--                    </div>-->
-<!--                </li>-->
-<!--            </ul>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</nav>-->
-<!--&lt;!&ndash;/.Navbar&ndash;&gt;-->
-
-<!--</header>-->
-<!--&lt;!&ndash;/Navigation & Intro&ndash;&gt;-->
-
-<!--&lt;!&ndash;Mask&ndash;&gt;-->
-<!--<div class="view rgba-black-light">-->
-<!--    <div class="full-bg-img flex-center pattern-4">-->
-<!--        <ul class="list-unstyled">-->
-<!--            <li>-->
-<!--                <h1 class="h1-responsive wow fadeInUp title"><strong>Hey, wanna eat something?</strong></h1>-->
-<!--            </li>-->
-<!--            <li>-->
-<!--                <div class="row wow fadeIn" data-wow-delay="0.4s">-->
-<!--                    <div class="col-md-3">-->
-<!--                        <div class="md-form">-->
-<!--                            <input type="text" id="form1" class="form-control">-->
-<!--                            <label for="form1">Your city</label>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-md-4">-->
-<!--                        <div class="md-form">-->
-<!--                            <input type="text" id="form2" class="form-control validate">-->
-<!--                            <label for="form2">Street</label>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-md-2">-->
-<!--                        <div class="md-form">-->
-<!--                            <input type="text" id="form3" class="form-control validate">-->
-<!--                            <label for="form3">House</label>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-md-3">-->
-<!--                        <div class="md-form">-->
-<!--                            <button class="btn btn-lg btn-danger">Order</button>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </li>-->
-<!--            <li class="payment">-->
-<!--                <i class="fab fa-cc-visa fa-2x" aria-hidden="true"></i>-->
-<!--                <i class="fab fa-cc-mastercard fa-2x" aria-hidden="true"></i>-->
-<!--                <i class="fas fa-money-bill-alt fa-2x" aria-hidden="true"></i>-->
-<!--            </li>-->
-<!--        </ul>-->
-<!--    </div>-->
-<!--</div>-->
-<!--&lt;!&ndash;/.Mask&ndash;&gt;-->
-
-<!--&lt;!&ndash;Footer&ndash;&gt;-->
-<!--<footer class="page-footer text-center text-md-left mt-0 pt-4">-->
-<!--    &lt;!&ndash;Footer links&ndash;&gt;-->
-<!--    <div class="container-fluid">-->
-<!--        <div class="row">-->
-<!--            &lt;!&ndash;First column&ndash;&gt;-->
-<!--            <div class="col-lg-3 col-md-6 ml-auto">-->
-<!--                <h5 class="title mb-3"><strong>About material design</strong></h5>-->
-<!--                <p>Material Design (codenamed Quantum Paper) is a design language developed by Google.</p>-->
-<!--                <p>Material Design for Bootstrap (MDB) is a powerful Material Design UI KIT for most popular HTML, CSS,-->
-<!--                    and JS framework - Bootstrap.</p>-->
-<!--            </div>-->
-<!--            &lt;!&ndash;/.First column&ndash;&gt;-->
-<!--            <hr class="w-100 clearfix d-sm-none">-->
-<!--            &lt;!&ndash;Second column&ndash;&gt;-->
-<!--            <div class="col-lg-2 col-md-6 ml-auto mb-4">-->
-<!--                <h5 class="title mb-3"><strong>First column</strong></h5>-->
-<!--                <ul class="list-unstyled">-->
-<!--                    <li>-->
-<!--                        <a href="#!">Link 1</a>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <a href="#!">Link 2</a>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <a href="#!">Link 3</a>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <a href="#!">Link 4</a>-->
-<!--                    </li>-->
-<!--                </ul>-->
-<!--            </div>-->
-<!--            &lt;!&ndash;/.Second column&ndash;&gt;-->
-<!--            <hr class="w-100 clearfix d-sm-none">-->
-<!--            &lt;!&ndash;Third column&ndash;&gt;-->
-<!--            <div class="col-lg-2 col-md-6 ml-auto mb-4">-->
-<!--                <h5 class="title mb-3"><strong>Second column</strong></h5>-->
-<!--                <ul class="list-unstyled">-->
-<!--                    <li>-->
-<!--                        <a href="#!">Link 1</a>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <a href="#!">Link 2</a>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <a href="#!">Link 3</a>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <a href="#!">Link 4</a>-->
-<!--                    </li>-->
-<!--                </ul>-->
-<!--            </div>-->
-<!--            &lt;!&ndash;/.Third column&ndash;&gt;-->
-<!--            <hr class="w-100 clearfix d-sm-none">-->
-<!--            &lt;!&ndash;Fourth column&ndash;&gt;-->
-<!--            <div class="col-lg-2 col-md-6 ml-auto mb-4">-->
-<!--                <h5 class="title mb-3"><strong>Third column</strong></h5>-->
-<!--                <ul class="list-unstyled">-->
-<!--                    <li>-->
-<!--                        <a href="#!">Link 1</a>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <a href="#!">Link 2</a>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <a href="#!">Link 3</a>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <a href="#!">Link 4</a>-->
-<!--                    </li>-->
-<!--                </ul>-->
-<!--            </div>-->
-<!--            &lt;!&ndash;/.Fourth column&ndash;&gt;-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    &lt;!&ndash;/.Footer links&ndash;&gt;-->
-<!--    <hr>-->
-<!--    &lt;!&ndash;Call to action&ndash;&gt;-->
-<!--    <div class="call-to-action text-center my-4">-->
-<!--        <h4 class="mb-4">Material Design for Bootstrap</h4>-->
-<!--        <h5 class="mb-4">Get our UI KIT for free</h5>-->
-<!--        <ul class="list-unstyled list-inline">-->
-<!--            <li class="list-inline-item">-->
-<!--                <a target="_blank" href="https://mdbootstrap.com/getting-started/"-->
-<!--                   class="btn btn-primary waves-effect waves-light"-->
-<!--                   rel="nofollow">Sign up!</a>-->
-<!--            </li>-->
-<!--            <li class="list-inline-item">-->
-<!--                <a target="_blank" href="https://mdbootstrap.com/material-design-for-bootstrap/"-->
-<!--                   class="btn btn-info waves-effect waves-light"-->
-<!--                   rel="nofollow">Learn more</a>-->
-<!--            </li>-->
-<!--        </ul>-->
-<!--    </div>-->
-<!--    &lt;!&ndash;/.Call to action&ndash;&gt;-->
-
-<!--    &lt;!&ndash;Copyright&ndash;&gt;-->
-<!--    <div class="footer-copyright py-3 text-center">-->
-<!--        <div class="containter-fluid">-->
-<!--            © 2018 Copyright: <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    &lt;!&ndash;/.Copyright&ndash;&gt;-->
-<!--</footer>-->
-<!--&lt;!&ndash;/.Footer&ndash;&gt;-->
-
-<!--&lt;!&ndash;<nav class="navbar navbar-expand-lg navbar-light bg-light">&ndash;&gt;-->
-<!--&lt;!&ndash;    <div class="container-fluid">&ndash;&gt;-->
-<!--&lt;!&ndash;        <a class="navbar-brand" href="#">BistroApp</a>&ndash;&gt;-->
-<!--&lt;!&ndash;        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"&ndash;&gt;-->
-<!--&lt;!&ndash;                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">&ndash;&gt;-->
-<!--&lt;!&ndash;            <span class="navbar-toggler-icon"></span>&ndash;&gt;-->
-<!--&lt;!&ndash;        </button>&ndash;&gt;-->
-<!--&lt;!&ndash;        <div class="collapse navbar-collapse" id="navbarSupportedContent">&ndash;&gt;-->
-<!--&lt;!&ndash;            <ul class="navbar-nav me-auto mb-2 mb-lg-0">&ndash;&gt;-->
-<!--&lt;!&ndash;                <li class="nav-item">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>&ndash;&gt;-->
-<!--&lt;!&ndash;                </li>&ndash;&gt;-->
-<!--&lt;!&ndash;                <li class="nav-item">&ndash;&gt;-->
-<!--&lt;!&ndash;                    #<a class="nav-link" href="{% url 'home' %}">Books</a>&ndash;&gt;-->
-<!--&lt;!&ndash;                </li>&ndash;&gt;-->
-<!--&lt;!&ndash;            </ul>&ndash;&gt;-->
-<!--&lt;!&ndash;           # <form class="d-flex" id="search-form" method="get" action="{% url 'home' %}">&ndash;&gt;-->
-<!--&lt;!&ndash;                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search"&ndash;&gt;-->
-<!--&lt;!&ndash;                       value="{{ search_text }}">&ndash;&gt;-->
-<!--&lt;!&ndash;                <button class="btn btn-outline-success" type="submit">Search</button>&ndash;&gt;-->
-<!--&lt;!&ndash;            </form>&ndash;&gt;-->
-<!--&lt;!&ndash;        </div>&ndash;&gt;-->
-<!--&lt;!&ndash;    </div>&ndash;&gt;-->
-<!--&lt;!&ndash;</nav>&ndash;&gt;-->
-<!--<div class="container">-->
-<!--    {% block content %}-->
-    <!--    {% endblock %}-->
-<!--</div>-->
-
-</body>
 </html>
