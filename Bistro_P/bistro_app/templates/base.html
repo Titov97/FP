@@ -224,50 +224,53 @@
 <!--Mask-->
 <div class="view rgba-black-light">
     <div class="full-bg-img flex-center pattern-4">
-        <ul class="list-unstyled">
-            <li>
-                <h1 class="h1-responsive wow fadeInUp title"><strong>Hey, wanna make your own recipe?</strong></h1>
-            </li>
-            <li>
-                <div class="row wow fadeIn" data-wow-delay="0.4s">
-                    <div class="col-md-3">
-                        <div class="md-form">
-                            <input type="text" id="form1" class="form-control">
-                            <label for="form1">Your city</label>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="md-form">
-                            <input type="text" id="form2" class="form-control validate">
-                            <label for="form2">Street</label>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="md-form">
-                            <input type="text" id="form3" class="form-control validate">
-                            <label for="form3">House</label>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="md-form">
-                            <button class="btn btn-lg btn-danger waves-effect waves-light">Order</button>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="payment">
-                <i class="fab fa-cc-visa fa-2x" aria-hidden="true"></i>
-                <i class="fab fa-cc-mastercard fa-2x" aria-hidden="true"></i>
-                <i class="fas fa-cc-revolut fa-2x" aria-hidden="true"></i>
-                <i class="fas fa-money-bill-alt fa-2x" aria-hidden="true"></i>
-            </li>
-        </ul>
+        {#        <ul class="list-unstyled">#}
+        {#            <li>#}
+        {#                <h1 class="h1-responsive wow fadeInUp title"><strong>Hey, wanna make your own recipe?</strong></h1>#}
+        {#            </li>#}
+        {#            <li>#}
+        {#                <div class="row wow fadeIn" data-wow-delay="0.4s">#}
+        {#                    <div class="col-md-3">#}
+        {#                        <div class="md-form">#}
+        {#                            <input type="text" id="form1" class="form-control">#}
+        {#                            <label for="form1">Your city</label>#}
+        {#                        </div>#}
+        {#                    </div>#}
+        {#                    <div class="col-md-4">#}
+        {#                        <div class="md-form">#}
+        {#                            <input type="text" id="form2" class="form-control validate">#}
+        {#                            <label for="form2">Street</label>#}
+        {#                        </div>#}
+        {#                    </div>#}
+        {#                    <div class="col-md-2">#}
+        {#                        <div class="md-form">#}
+        {#                            <input type="text" id="form3" class="form-control validate">#}
+        {#                            <label for="form3">House</label>#}
+        {#                        </div>#}
+        {#                    </div>#}
+        {#                    <div class="col-md-3">#}
+        {#                        <div class="md-form">#}
+        {#                            <button class="btn btn-lg btn-danger waves-effect waves-light">Order</button>#}
+        {#                        </div>#}
+        {#                    </div>#}
+        {#                </div>#}
+        {#            </li>#}
+        {#            <li class="payment">#}
+        {#                <i class="fab fa-cc-visa fa-2x" aria-hidden="true"></i>#}
+        {#                <i class="fab fa-cc-mastercard fa-2x" aria-hidden="true"></i>#}
+        {#                <i class="fas fa-cc-revolut fa-2x" aria-hidden="true"></i>#}
+        {#                <i class="fas fa-money-bill-alt fa-2x" aria-hidden="true"></i>#}
+        {#            </li>#}
+        {#        </ul>#}
+        {% block content %}
+
+        {% endblock %}
     </div>
 </div>
 <!--/.Mask-->
-{% block content %}
-
-{% endblock %}
+{#{% block content %}#}
+{##}
+{#{% endblock %}#}
 <!--Footer-->
 <footer class="page-footer text-center text-md-left mt-0 pt-4">
     <!--Footer links-->
