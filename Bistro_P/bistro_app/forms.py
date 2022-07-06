@@ -1,8 +1,6 @@
-import re
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from django.core.exceptions import ValidationError
 
 from bistro_app.models import Ingredient
 
@@ -21,7 +19,7 @@ class IngredientsForm(forms.ModelForm):
 
     quantity_stock = forms.FloatField(required=True, widget=forms.NumberInput(
         attrs={
-            'min':'0',
+            'min': '0',
             'class': 'form-control',
             'placeholder': 'Quantity_stock'
         }
@@ -29,7 +27,7 @@ class IngredientsForm(forms.ModelForm):
 
     unit = forms.CharField(widget=forms.NumberInput(
         attrs={
-            'min':'0',
+            'min': '0',
             'class': 'form-control',
             'placeholder': 'Units'
         }
@@ -87,6 +85,9 @@ class ContactForm(forms.Form):
 class SignUpForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = User
-        fields = ('username', 'password1')
-
-
+        fields = ('username', 'password1', 'password2')
+        widgets = {
+            'username': forms.TextInput(attrs={'placeholder': 'Username'}),
+            # 'password1': forms.PasswordInput(attrs={'placeholder': 'Password'}),  Probleme cu placeholder-u, replace in sign_up
+            # 'password2': forms.PasswordInput(attrs={'placeholder': 'Re-entry your password'}),
+        }

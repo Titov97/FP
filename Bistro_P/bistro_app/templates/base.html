@@ -115,10 +115,11 @@
             animation: chartjs-render-animation 0.001s;
         }
 
-        {% block style %}
 
-        {% endblock %}
     </style>
+    {% block style %}
+
+    {% endblock %}
 </head>
 
 
@@ -144,7 +145,7 @@
                         <a class="nav-link waves-effect waves-light" href="#">Special Offers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link waves-effect waves-light" href="recipes.html">Recipies</a>
+                        <a class="nav-link waves-effect waves-light" href="recipes.html">Recipes</a>
                     </li>
                     <li class="nav-item btn-group">
                         <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-3"
@@ -191,12 +192,12 @@
                         <div class="navbar-nav ml-auto">
                             <div class="nav-item dropdown">
                                 {% if User.is_authenticated %}
-                                    <a class="nav-link active dropdown-toggle "  href="#" data-toggle="dropdown">
+                                    <a class="nav-link active dropdown-toggle " href="#" data-toggle="dropdown">
                                         {% if user.first_name %}Hello, {{ user.first_name }}!
                                         {% else %}Hello, {{ user.username }}!{% endif %}
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item text-right"  href="{% url 'logout' %}">Logout</a>
+                                        <a class="dropdown-item text-right" href="{% url 'logout' %}">Logout</a>
                                         <a class="dropdown-item text-right" href="{% url 'change_pass' %}">Change
                                             password</a>
                                     </div>

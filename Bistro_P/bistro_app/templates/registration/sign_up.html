@@ -1,23 +1,33 @@
 {% extends 'base.html' %}
-
+{% block style %}
+    <style>
+        input {
+            color: black !important;
+            max-width: 200px;
+        }
+    </style>
+{% endblock %}
 {% block content %}
 
-  <form method="post">
-      {% csrf_token %}
-      {{ form }}
-      <input type="submit" value="Submit" class="btn btn-primary">
-  </form>
+    <div class="container">
+        <form action="{% url 'sign_up' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.username }}
+
+            </div>
+            <div class="form-group">
+{#                {{ form.password1 }}#}
+                <input type="password" name="password1" placeholder="Passwrid"/>
+            </div>
+            <div class="form-group">
+                {{ form.password2 }}
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
 {% endblock %}
 
-{#<div class="container">#}
-{#    <h1>Form</h1>#}
-{#    <form action="{% url 'index' %}" method="post">#}
-{#        {% csrf_token %}#}
-{#    <div class="form-group">#}
-{#        {{ form }}#}
-{#    </div>#}
-{#    <div class="form-group">#}
-{#        <input class="btn btn-success" type="submit" value="Submit">#}
-{#    </div>#}
-{#    </form>#}
-{#</div>#}
+
