@@ -17,6 +17,8 @@ class Ingredient(models.Model):
     def __str__(self):
         return f"{self.name} {self.quantity_stock}{self.unit}"
 
+    def __repr__(self):
+        return self.__str__
 
 class RecipeIngredient(models.Model):
     ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
@@ -25,6 +27,8 @@ class RecipeIngredient(models.Model):
     def __str__(self):
         return f"{self.ingredient.name} {self.quantity}{self.ingredient.unit}"
 
+    def __repr__(self):
+        return self.__str__
 
 class Recipe(models.Model):
     name = models.CharField(max_length=128)
@@ -41,6 +45,14 @@ class Recipe(models.Model):
         return (recipe_ingredient.ingredient.price_unit * recipe_ingredient.quantity for recipe_ingredient in
                 self.ingredients.all())
 
+    def get_parents(self):
+        return ",".join([str(p) for p in self.ingredients.all()])
+
+    def __str__(self):
+        return f"{self.name} , {self.get_parents()}"
+
+    def __repr__(self):
+        return self.name
 
 class Menu(models.Model):
     menu_name = models.CharField(max_length=255)
