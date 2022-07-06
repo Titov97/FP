@@ -4,7 +4,7 @@ from django.urls import path
 
 from bistro_app import views
 # from bistro_app.views import hello
-from bistro_app.views import contact_view, MyPasswordChangeView
+from bistro_app.views import contact_view, MyPasswordChangeView,  search_view
 
 urlpatterns = [
 
@@ -19,4 +19,5 @@ urlpatterns = [
     path('accounts/login/', LoginView.as_view(), name='login'),
     path('accounts/change_pass/', views.MyPasswordChangeView.as_view(), name='change_pass'),
     path('logout/', LogoutView.as_view(), name='logout'),
+    path('search/', search_view, name="search_results"),
 ]

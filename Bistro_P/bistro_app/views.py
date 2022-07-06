@@ -1,4 +1,5 @@
 from django.contrib.auth.views import PasswordChangeView
+from django.db.models import Q
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.core.mail import send_mail, BadHeaderError
@@ -7,7 +8,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 
 from .forms import ContactForm, SignUpForm
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView
 from django.views import View
 
 from bistro_app.models import Ingredient, Recipe, Menu, Order
@@ -72,3 +73,12 @@ class MyPasswordChangeView(PasswordChangeView):
     success_url = reverse_lazy('login')
 
 
+def search_view(request):
+    results = []
+    query = ""
+    if request.method == "GET":
+        query = request.GET.get("q")
+        if query == " ":
+            query = "No results"
+        results = Recipe.objects.filter(Q(ingredients__ingredient__name__icontains=query) | Q(name__icontains=query))
+    return render(request, "search_results.html", {"query": query, "results": results})

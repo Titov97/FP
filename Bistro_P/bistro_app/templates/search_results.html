@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if query %}
+        {% for rez in results %}
+            {{ rez.get_url }} and {{ rez.ingredients }}
+            {{ rez.name }}
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}
