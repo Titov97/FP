@@ -130,7 +130,8 @@
     <nav class=" navbar navbar-expand-lg navbar-dark">
         <div class="container">
 
-            <a class="navbar-brand waves-effect waves-light" href="#">BISTRO P</a>
+            <a class="navbar-brand waves-effect waves-light"
+               style="font-size:75px; color:cadetblue" href="#"><i>BISTRO P </i></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-3"
                     aria-controls="navbarSupportedContent-3" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -176,15 +177,15 @@
 
                 </ul>
                 <ul class="navbar-nav ml-auto nav-flex-icons">
-                    <li class="nav-item">
-                        <a class="nav-link waves-effect waves-light"><i class="fab fa-twitter"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link waves-effect waves-light"><i class="fab fa-google-plus-g"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link waves-effect waves-light"><i class="fab fa-facebook"></i></a>
-                    </li>
+                    {#                    <li class="nav-item">#}
+                    {#                        <a class="nav-link waves-effect waves-light"><i class="fab fa-twitter"></i></a>#}
+                    {#                    </li>#}
+                    {#                    <li class="nav-item">#}
+                    {#                        <a class="nav-link waves-effect waves-light"><i class="fab fa-google-plus-g"></i></a>#}
+                    {#                    </li>#}
+                    {#                    <li class="nav-item">#}
+                    {#                        <a class="nav-link waves-effect waves-light"><i class="fab fa-facebook"></i></a>#}
+                    {#                    </li>#}
                     <li class="nav-item btn-group">
                         <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-4"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i>
@@ -214,14 +215,22 @@
                              aria-labelledby="navbarDropdownMenuLink">
                         </div>
                     </li>
-                    <li>
-                        <form id="form" role="search" action="{% url "search_results" %}">
-                            <input type="search" id="query" name="q"
-                                   placeholder="Search..."
-                                   aria-label="Search through site content">
-                            <button>Search</button>
-                        </form>
-                    </li>
+                    <link rel="stylesheet"
+                          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+                    <!-- The form -->
+                    <form class="example" action="action_page.php">
+                        <input type="text" placeholder="Search.." name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                    {#                    <li>#}
+                    {#                        <form id="form" role="search" action="{% url "search_results" %}">#}
+                    {#                            <input type="search" id="query" name="q"#}
+                    {#                                   placeholder="Search..."#}
+                    {#                                   aria-label="Search through site content">#}
+                    {#                            <button>Search</button>#}
+                    {#                        </form>#}
+                    {#                    </li>#}
                     </li>
                 </ul>
             </div>
@@ -394,7 +403,7 @@
             {#            <title>QR Code Generator</title>#}
 
         </ul>
-         </div>
+    </div>
 
     </div>
     <!--            <body>-->
@@ -406,25 +415,30 @@
 
 
 
-        <div class="text-center" >
+        <div class="text-center">
 
             <!-- Get a Placeholder image initially,
              this will change according to the
              data entered later -->
-            <a href="https://qrco.de/bd9GAQ" target="_blank"><img src="{% static 'QRCODE-v2.PNG' %}" height="160" width="160" alt="QR code form"a/>
+            <a href="https://qrco.de/bd9GAQ" target="_blank"><img src="{% static 'QRCODE-v2.PNG' %}" height="160"
+                                                                  width="160" alt="QR code form" a/>
 
-            <!--                     "https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0"-->
-            <!--                class="qr-code img-thumbnail img-responsive" />-->
+                <!--                     "https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0"-->
+                <!--                class="qr-code img-thumbnail img-responsive" />-->
 
 
         </div>
                          <div>
-            <embed src=" https://coderadio.freecodecamp.org/" autoplay=true height="300" width="300" autostart=true >
+            <embed src=" https://coderadio.freecodecamp.org/" autoplay=true height="300" width="300" autostart=true>
         </div>
 
 
             </span>
 
+        <i class="fab fa-facebook" style="font-size:15px;color:cadetblue;"></i>
+        <i class="fab fa-google plus" style="font-size:15px;color:red;"></i>
+        <i class="fab fa-twitter" style="font-size:15px;color:blue;"></i>
+        <i class="fab fa-instagram" style="font-size:15px;color:;"></i>
         <!--    <div class="form-horizontal">-->
         <!--        <div class="form-group">-->
         <!--            <label class="control-label col-sm-2"-->
