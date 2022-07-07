@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import PasswordChangeView
 from django.db.models import Q
 from django.http import HttpResponse
@@ -13,6 +14,12 @@ from django.views import View
 
 from bistro_app.models import Ingredient, Recipe, Menu, Order
 
+
+# -----cart------
+# from django.shortcuts import render, get_object_or_404
+# from .models import CartCategory, CartProduct
+# from .forms import CartAddProductForm
+# -------------
 
 # def hello(request):
 #     query = request.GET.get('query', '')
@@ -82,3 +89,15 @@ def search_view(request):
             query = "No results"
         results = Recipe.objects.filter(Q(ingredients__ingredient__name__icontains=query) | Q(name__icontains=query))
     return render(request, "search_results.html", {"query": query, "results": results})
+
+
+@login_required
+def open_cart_view(request):
+    return render(request, "open_cart.html", {'cart': get_open_cart(request)})
+
+
+def get_open_cart(request):
+    open_cart = Order.objects.filter(user=request.user, status='open').first()
+    if open_cart is None:
+        open_cart = Order.objects.create(user=request.user, status='open')
+    return open_cart

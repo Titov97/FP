@@ -20,4 +20,5 @@ urlpatterns = [
     path('accounts/change_pass/', views.MyPasswordChangeView.as_view(), name='change_pass'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('search/', search_view, name="search_results"),
+    path('cart/', views.open_cart_view, name="open_cart"),
 ]

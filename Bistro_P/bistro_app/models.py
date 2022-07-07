@@ -69,9 +69,12 @@ class MenuItem(models.Model):
 
 
 class Order(models.Model):
-    #status = models.Choices #TODO Radu
+    STATUS = (("closed", "Closed"), ("open", "Open"))
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    status = models.CharField(max_length=25, choices=STATUS)
 
+    def cart_items(self):
+        return OrderItem.objects.filter(order=self)
 
 
 class OrderItem(models.Model):
