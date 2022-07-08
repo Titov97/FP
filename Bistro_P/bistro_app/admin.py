@@ -10,5 +10,6 @@ admin.site.register(Ingredient)
 admin.site.register(Recipe)
 admin.site.register(Menu)
 admin.site.register(Order)
+admin.site.register(OrderItem)
 admin.site.register(RecipeIngredient)
 
