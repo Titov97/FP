@@ -83,9 +83,9 @@ class ContactForm(forms.Form):
 
 
 class SignUpForm(UserCreationForm):
-    class Meta(UserCreationForm.Meta):
+    class Meta:
         model = User
-        fields = ('username', 'password1', 'password2')
+        fields = ['username', 'password1', 'password2']
         widgets = {
             'username': forms.TextInput(attrs={'placeholder': 'Username'}),
             # 'password1': forms.PasswordInput(attrs={'placeholder': 'Password'}),

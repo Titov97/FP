@@ -38,7 +38,7 @@ footer.page-footer {
 input[type="text"]:focus:not([readonly]) {
     border-color: #C00;
     box-shadow: 0 1px 0 0 #C00;
-    color: #fff;
+    color: black;
 }
 
 input[type="text"]:not([readonly]) + label {
@@ -46,7 +46,7 @@ input[type="text"]:not([readonly]) + label {
 }
 
 input[type="text"]:focus:not([readonly]) + label {
-    color: #fff;
+    color: black;
 }
 
 .navbar .btn-group .dropdown-menu a:hover {
@@ -54,5 +54,5 @@ input[type="text"]:focus:not([readonly]) + label {
 }
 
 .navbar .btn-group .dropdown-menu a:active {
-    color: #fff !important;
+    color: black !important;
 }

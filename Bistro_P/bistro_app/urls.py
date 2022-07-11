@@ -8,8 +8,7 @@ from bistro_app.views import contact_view, MyPasswordChangeView,  search_view
 
 urlpatterns = [
 
-    path('', views.home, name='home'),
-    # path('hello/', hello),
+    path('', views.home, name='index'),
     path('ingredients/', views.IngredientsView.as_view(), name='ingredients'),
     path('recipes/', views.RecipeView.as_view(), name='recipes'),
     path('menu/', views.MenuView.as_view(), name='menu'),
@@ -17,7 +16,7 @@ urlpatterns = [
     path('contact/', contact_view, name='contact'),
     path('sign_up/', views.SignUpView.as_view(), name='sign_up'),
     path('accounts/login/', LoginView.as_view(), name='login'),
-    path('accounts/change_pass/', views.MyPasswordChangeView.as_view(), name='change_pass'),
+    path('accounts/change_pass/', MyPasswordChangeView.as_view(), name='change_pass'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('search/', search_view, name="search_results"),
     path('cart/', views.open_cart_view, name="open_cart"),

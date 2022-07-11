@@ -71,13 +71,14 @@ def success_view(request):
 
 class SignUpView(CreateView):
     template_name = 'registration/sign_up.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('index')
     form_class = SignUpForm
 
 
 class MyPasswordChangeView(PasswordChangeView):
     template_name = 'registration/change_pass.html'
     success_url = reverse_lazy('login')
+
 
 
 def search_view(request):
