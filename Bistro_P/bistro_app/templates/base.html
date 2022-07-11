@@ -110,9 +110,11 @@
             }
         }
 
-         {
-            -webkit-animation: chartjs-render-animation 0.001s;
-            animation: chartjs-render-animation 0.001s;
+        {
+            -webkit-animation: chartjs-render-animation 0.001s
+        ;
+            animation: chartjs-render-animation 0.001s
+        ;
         }
 
 
@@ -130,7 +132,7 @@
     <nav class=" navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand waves-effect waves-light pr-4"
-               style="font-size:75px;font-family: 'Curlz MT'; margin-right:120px; color:cadetblue"
+               style="font-size:75px;font-family: 'Curlz MT',serif; margin-right:120px; color:cadetblue"
                href="#"><i>BISTRO P</i></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent-3"
@@ -201,7 +203,8 @@
                         <div class="navbar-nav ml-auto">
                             <div class="nav-item dropdown">
                                 {% if user.is_authenticated %}
-                                    <a class="nav-link active dropdown-toggle " href="{% url 'index' %}" data-toggle="dropdown">
+                                    <a class="nav-link active dropdown-toggle " href="{% url 'index' %}"
+                                       data-toggle="dropdown">
                                         {% if user.username %}Hello, {{ user.username }}!
                                         {% else %}Hello, {{ user.username }}!{% endif %}
                                     </a>
@@ -317,10 +320,12 @@
                     care se confruntă clienții noștri. Suntem un partener de încredere pentru mulți clienți
                     multinaționali și ne mândrim cu capacitatea de a înțelege perspectivele internaționale,
                     precum și cerințele și normele locale..</p>
-                <p>Radu Iordache</p>
-                <p>Alexandru Soare</p>
-                <p>Sebastian Gramada</p>
-                <p>Filip Titov</p>
+
+
+                <p><a href="https://www.linkedin.com/in/radu-iordache-python23849013/">Radu Iordache</a></p>
+                <p><a href="https://www.linkedin.com/in/soare-alexandru-554b72136/">Alexandru Soare</a></p>
+                <p><a href="https://www.linkedin.com/in/soare-alexandru-554b72136/">Sebastian Gramada</a></p>
+                <p><a href="https://www.linkedin.com/in/soare-alexandru-554b72136/">Filip Titov</a></p>
             </div>
             <!--/.First column-->
             <hr class="w-100 clearfix d-sm-none">
@@ -423,11 +428,8 @@
 
     <!--            <body>-->
 
-    <div class="container-fluid">
-{#        <span class="container-fluid">#}
-
-
-
+    <a class="container-fluid">
+        {#        <span class="container-fluid">#}
 
 
         <div class="text-center">
@@ -436,54 +438,53 @@
              this will change according to the
              data entered later -->
             <a href="https://qrco.de/bd9GAQ" target="_blank"><img src="{% static 'QRCODE-v2.PNG' %}" height="160"
-                                                                  width="160" alt="QR code form" />
+                                                                  width="160" alt="QR code form"/>
 
                 <!--                     "https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0"-->
                 <!--                class="qr-code img-thumbnail img-responsive" />-->
 
 
         </div>
-{#        <div>#}
-{#            <embed src=" https://coderadio.freecodecamp.org/" autoplay=true height="300" width="300" autostart=true>#}
-{#        </div>#}
+        {#        <div>#}
+        {#            <embed src=" https://coderadio.freecodecamp.org/" autoplay=true height="300" width="300" autostart=true>#}
+        {#        </div>#}
 
 
-{#            </span>#}
-        <a class="dropdown-item waves-effect waves-light" style="font-family: cursive" href="#">Phone: +40762362909</a>
-        <a class="dropdown-item waves-effect waves-light" style="font-family: cursive" href="#">E-mail:
-            bistro.p2022@gmail.com</a>
+        {#            </span>#}
+        <p><a class="item" style="font-family: sans-serif" href="#">Phone: +40762362909</a></p>
+        <p><a class="item" style="font-family: sans-serif" href="#">E-mail:
+            bistro.p2022@gmail.com</a></p>
+        <a href="https://facebook.com"><i class="fab fa-facebook" style="font-size:15px;color:cadetblue;"></i></a>
+        <a href="https://myaccount.google.com/"><i class="fab fa-google plus" style="font-size:15px;color:red;"></i></a>
+        <a href="https://twitter.com/i/flow/login>"><i class="fab fa-twitter" style="font-size:15px;color:blue;"></i></a>
+        <a href="https:///www.instagram.com/"><i class="fab fa-instagram" style="font-size:15px;color:white;"></i></a>
+    <!--    <div class="form-horizontal">-->
+    <!--        <div class="form-group">-->
+    <!--            <label class="control-label col-sm-2"-->
+    <!--                   for="content">-->
+    <!--                Content:-->
+    <!--            </label>-->
+    <!--            <div class="col-sm-10">-->
 
-        <i class="fab fa-facebook" style="font-size:15px;color:cadetblue;"></i>
-        <i class="fab fa-google plus" style="font-size:15px;color:red;"></i>
-        <i class="fab fa-twitter" style="font-size:15px;color:blue;"></i>
-        <i class="fab fa-instagram" style="font-size:15px;color:white;"></i>
-        <!--    <div class="form-horizontal">-->
-        <!--        <div class="form-group">-->
-        <!--            <label class="control-label col-sm-2"-->
-        <!--                   for="content">-->
-        <!--                Content:-->
-        <!--            </label>-->
-        <!--            <div class="col-sm-10">-->
+    <!--                &lt;!&ndash; Input box to enter the-->
+    <!--                    required data &ndash;&gt;-->
+    <!--                <input type="text" size="60"-->
+    <!--                       maxlength="60" class="form-control"-->
+    <!--                       id="content" placeholder="Enter content"/>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        <div class="form-group">-->
+    <!--            <div class="col-sm-offset-2 col-sm-10">-->
 
-        <!--                &lt;!&ndash; Input box to enter the-->
-        <!--                    required data &ndash;&gt;-->
-        <!--                <input type="text" size="60"-->
-        <!--                       maxlength="60" class="form-control"-->
-        <!--                       id="content" placeholder="Enter content"/>-->
-        <!--            </div>-->
-        <!--        </div>-->
-        <!--        <div class="form-group">-->
-        <!--            <div class="col-sm-offset-2 col-sm-10">-->
-
-        <!--                &lt;!&ndash; Button to generate QR Code for-->
-        <!--                 the entered data &ndash;&gt;-->
-        <!--                <button type="button" class=-->
-        <!--                        "btn btn-default" id="generate">-->
-        <!--                    Generate-->
-        <!--                </button>-->
-        <!--            </div>-->
-        <!--        </div>-->
-        <!--    </div>-->
+    <!--                &lt;!&ndash; Button to generate QR Code for-->
+    <!--                 the entered data &ndash;&gt;-->
+    <!--                <button type="button" class=-->
+    <!--                        "btn btn-default" id="generate">-->
+    <!--                    Generate-->
+    <!--                </button>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
     </div>
 
 
