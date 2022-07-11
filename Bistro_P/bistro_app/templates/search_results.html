@@ -3,7 +3,7 @@
 {% block content %}
     {% if query %}
         {% for rez in results %}
-            {{ rez.get_url }} and {{ rez.ingredients }}
+            {{ rez.get_url }} and {{ rez.ingredients.name }}
             {{ rez.name }}
         {% endfor %}
     {% endif %}

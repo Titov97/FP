@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-
+import csv
 from bistro_app.models import Ingredient
 
 
@@ -91,3 +91,4 @@ class SignUpForm(UserCreationForm):
             # 'password1': forms.PasswordInput(attrs={'placeholder': 'Password'}),  Probleme cu placeholder-u, replace in sign_up
             # 'password2': forms.PasswordInput(attrs={'placeholder': 'Re-entry your password'}),
         }
+
