@@ -147,7 +147,7 @@
                         <a class="nav-link waves-effect waves-light" href="#">Special Offers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link waves-effect waves-light" href="recipes.html">Recipes</a>
+                        <a class="nav-link waves-effect waves-light" href="{% url 'recipes' %}">Recipes</a>
                     </li>
                     <li class="nav-item btn-group">
                         <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-3"
@@ -161,7 +161,10 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link waves-effect waves-light" href="recipes.html">Contact</a>
+                        <a class="nav-link waves-effect waves-light" href="{% url 'open_cart' %}">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect waves-light" href="{% url 'contact' %}">Contact</a>
                     </li>
                     {#                    <li class="nav-item btn-group">#}
                     {#                        <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-4"#}

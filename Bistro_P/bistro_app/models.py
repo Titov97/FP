@@ -35,7 +35,7 @@ class Recipe(models.Model):
     # created_by = models.CharField(max_length=128)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     ingredients = models.ManyToManyField(RecipeIngredient)
-    sale_price = models.FloatField()
+    sale_price = models.DecimalField(max_digits=10,decimal_places=2)
 
     def production_price(self):
         # total_cost = 0
@@ -80,5 +80,6 @@ class Order(models.Model):
 class OrderItem(models.Model):
     recipe = models.ForeignKey(RecipeIngredient, on_delete=models.CASCADE)
     quantity = models.FloatField()
+    # price = models.DecimalField(max_digits= 10, decimal_places=2)
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
 
