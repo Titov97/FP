@@ -88,7 +88,7 @@ class SignUpForm(UserCreationForm):
         fields = ('username', 'password1', 'password2')
         widgets = {
             'username': forms.TextInput(attrs={'placeholder': 'Username'}),
-            # 'password1': forms.PasswordInput(attrs={'placeholder': 'Password'}),  Probleme cu placeholder-u, replace in sign_up
+            # 'password1': forms.PasswordInput(attrs={'placeholder': 'Password'}),
             # 'password2': forms.PasswordInput(attrs={'placeholder': 'Re-entry your password'}),
         }
 
