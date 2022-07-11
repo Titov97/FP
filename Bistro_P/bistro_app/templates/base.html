@@ -64,7 +64,7 @@
             color: #fff;
         }
 
-        .payment :not(:first-child) {
+        .payment .fa:not(:first-child) {
             margin-left: 10px;
             color: rgba(255, 255, 255, .8);
         }
@@ -110,7 +110,7 @@
             }
         }
 
-         {
+        .chartjs-render-monitor {
             -webkit-animation: chartjs-render-animation 0.001s;
             animation: chartjs-render-animation 0.001s;
         }
@@ -227,10 +227,8 @@
                           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
                     <!-- The form -->
-                    <form class="example" >
-                        <label>
-                            <form class="example" action="{% url "search_results" %}">
-                        </label>
+                    <form class="example" action="{% url "search_results" %}">
+                        <input type="text" placeholder="Search.." name="q">
                         <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
                     {#                    <li>#}
@@ -241,7 +239,7 @@
                     {#                            <button>Search</button>#}
                     {#                        </form>#}
                     {#                    </li>#}
-
+                    </li>
                 </ul>
             </div>
         </div>
@@ -357,19 +355,19 @@
                 <h5 class="title mb-3"><strong>Top Ingredients</strong></h5>
                 <ul class="list-unstyled">
                     <li>
-                        <a href="#">Ingredient 1</a>
+                        <a href="#!">Ingredient 1</a>
                     </li>
                     <li>
-                        <a href="#">Ingerdient 2</a>
+                        <a href="#!">Ingerdient 2</a>
                     </li>
                     <li>
-                        <a href="#">Ingredient 3</a>
+                        <a href="#!">Ingredient 3</a>
                     </li>
                     <li>
-                        <a href="#">Ingredient 4</a>
+                        <a href="#!">Ingredient 4</a>
                     </li>
                     <li>
-                        <a href="#">Ingredient 5</a>
+                        <a href="#!">Ingredient 5</a>
                     </li>
                 </ul>
             </div>
@@ -380,19 +378,19 @@
                 <h5 class="title mb-3"><strong>Best Deals</strong></h5>
                 <ul class="list-unstyled">
                     <li>
-                        <a href="#">Deal 1</a>
+                        <a href="#!">Deal 1</a>
                     </li>
                     <li>
-                        <a href="#">Deal 2</a>
+                        <a href="#!">Deal 2</a>
                     </li>
                     <li>
-                        <a href="#">Deal 3</a>
+                        <a href="#!">Deal 3</a>
                     </li>
                     <li>
-                        <a href="#">Deal 4</a>
+                        <a href="#!">Deal 4</a>
                     </li>
                     <li>
-                        <a href="#">Deal 5</a>
+                        <a href="#!">Deal 5</a>
                     </li>
                 </ul>
             </div>
@@ -417,7 +415,7 @@
         </ul>
     </div>
 
-
+    </div>
     <!--            <body>-->
 
     <div class="container-fluid">
@@ -433,16 +431,16 @@
              this will change according to the
              data entered later -->
             <a href="https://qrco.de/bd9GAQ" target="_blank"><img src="{% static 'QRCODE-v2.PNG' %}" height="160"
-                                                                  width="160" alt="QR code form" />
+                                                                  width="160" alt="QR code form" a/>
 
                 <!--                     "https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0"-->
                 <!--                class="qr-code img-thumbnail img-responsive" />-->
 
 
         </div>
-{#        <div>#}
-{#            <embed src=" https://coderadio.freecodecamp.org/" autoplay=true height="300" width="300" autostart=true>#}
-{#        </div>#}
+        <div>
+            <embed src=" https://coderadio.freecodecamp.org/" autoplay=true height="300" width="300" autostart=true>
+        </div>
 
 
 {#            </span>#}
