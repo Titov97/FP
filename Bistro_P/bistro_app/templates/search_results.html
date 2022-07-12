@@ -8,9 +8,9 @@
             <br>
             created by: {{ rez.created_by }},
             <br>
-            with {{ rez.ingredients }},
+            with {{ rez.ingredients.get_parents }},
             <br>
-            {{ rez.name }}
+{#            {{ rez.name }}#}
         {% endfor %}
     {% endif %}
 

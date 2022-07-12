@@ -2,18 +2,14 @@
 {#{% csrf_token %}#}
 
 {% block content %}
-    <h1>Welcome to the Contact page</h1>
-    <p>This keeps contact form.</p>
 
     <h2>Contact Us</h2>
-    <div>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-        </form>
-    </div>
-    <div class="form-actions">
-        <button type="submit">Send</button>
-    </div>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <div class="form-actions">
+            <button type="submit">Send</button>
+        </div>
 
 {% endblock %}
