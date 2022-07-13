@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.views import PasswordChangeView
+from django.contrib.auth.views import PasswordChangeView, LoginView, LogoutView
 from django.db.models import Q
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -79,6 +79,14 @@ class MyPasswordChangeView(PasswordChangeView):
     template_name = 'registration/change_pass.html'
     success_url = reverse_lazy('login')
 
+
+# class MyLoView(LoginView):
+#     template_name = 'registration/change_pass.html'
+#     success_url = reverse_lazy('login')
+
+class MyLogoutView(LogoutView):
+    template_name = 'registration/logout.html'
+    success_url = reverse_lazy('index')
 
 
 def search_view(request):
