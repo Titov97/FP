@@ -18,6 +18,8 @@
           href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/docs-app/css/compiled-addons-4.20.0.min.css">
     <link rel="stylesheet" type="text/css"
           href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/mdb-plugins-gathered.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
     <style>
@@ -132,8 +134,10 @@
     <nav class=" navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand waves-effect waves-light pr-4"
-               style="font-size:75px;font-family: 'Curlz MT',serif; margin-right:120px; color:cadetblue"
-               href="#"><i>BISTRO P</i></a>
+               style="font-size:75px;font-family: 'cursive',serif; margin-right:120px; color:white"
+               href="#"><i>
+                <marquee behavior="scroll" direction="left">Bistro P</marquee>
+            </i></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent-3"
                     aria-controls="navbarSupportedContent-3" aria-expanded="false" aria-label="Toggle navigation">
@@ -168,87 +172,75 @@
                     <li class="nav-item">
                         <a class="nav-link waves-effect waves-light" href="{% url 'contact' %}">Contact</a>
                     </li>
-                    {#                    <li class="nav-item btn-group">#}
-                    {#                        <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-4"#}
-                    {#                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="contact.html">Contact#}
-                    {#                        </a>#}
-                    {#                        <div class="dropdown-menu dropdown-menu-right dropdown-unique"#}
-                    {#                             aria-labelledby="navbarDropdownMenuLink-4">#}
-                    {#                            <a class="dropdown-item waves-effect waves-light" href="#">Phone: +40762362909</a>#}
-                    {#                            <a class="dropdown-item waves-effect waves-light" href="#">E-mail:#}
-                    {#                                bistro.p2022@gmail.com</a>#}
-                    {#                            <a class="dropdown-item waves-effect waves-light" href="#">Facebook:</a>#}
-                    {#                        </div>#}
-                    {#                    </li>#}
-                    <br>
-                    <br>
-                    <br>
-
-                </ul>
-                <ul class="navbar-nav ml-auto nav-flex-icons">
-                    {#                    <li class="nav-item">#}
-                    {#                        <a class="nav-link waves-effect waves-light"><i class="fab fa-twitter"></i></a>#}
-                    {#                    </li>#}
-                    {#                    <li class="nav-item">#}
-                    {#                        <a class="nav-link waves-effect waves-light"><i class="fab fa-google-plus-g"></i></a>#}
-                    {#                    </li>#}
-                    {#                    <li class="nav-item">#}
-                    {#                        <a class="nav-link waves-effect waves-light"><i class="fab fa-facebook"></i></a>#}
-                    {#                    </li>#}
                     <li class="nav-item btn-group">
                         <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-4"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-user"></i>
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i>
                         </a>
-                        <div class="navbar-nav ml-auto">
-                            <div class="nav-item dropdown">
-                                {% if user.is_authenticated %}
-                                    <a class="nav-link active dropdown-toggle " href="{% url 'index' %}"
-                                       data-toggle="dropdown">
-                                        {% if user.username %}Hello, {{ user.username }}!
-                                        {% else %}Hello, {{ user.username }}!{% endif %}
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item text-right" href="{% url 'logout' %}">Logout</a>
-                                        <a class="dropdown-item text-right" href="{% url 'change_pass' %}">Change
-                                            password</a>
-                                        <a class="dropdown-item text-right" href="#">My Recipes</a>
-                                        <a class="dropdown-item text-right" href="#">My Ingredients</a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-unique"
+                             aria-labelledby="navbarDropdownMenuLink-3">
+                            {% if user.is_authenticated %}
+                                <a href="{% url 'index' %}"
+                                   data-toggle="dropdown">
+                                    {% if user.username %}Hello, {{ user.username }}!
+                                    {% else %}Hello, {{ user.username }}!{% endif %}
+                                </a>
+                                <div>
+                                    <a class="dropdown-item text-right" href="{% url 'logout' %}">Logout</a>
+                                    <a class="dropdown-item text-right" href="{% url 'change_pass' %}">Change
+                                        password</a>
+                                    <a class="dropdown-item text-right" href="#">My Recipes</a>
+                                    <a class="dropdown-item text-right" href="#">My Ingredients</a>
 
-                                    </div>
-                                {% else %}
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item text-right" href="{% url 'login' %}">Login</a>
-                                        <a class="dropdown-item text-right" href="{% url 'sign_up' %}">Sign up</a>
-                                    </div>
-                                {% endif %}
-                            </div>
+                                </div>
+                            {% else %}
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item text-right" href="{% url 'login' %}">Login</a>
+                                    <a class="dropdown-item text-right" href="{% url 'sign_up' %}">Sign up</a>
+                                </div>
+                            {% endif %}
+
                         </div>
+                    </li>
+
                     <li>
                         <div class="dropdown-menu dropdown-menu-right dropdown-unique"
                              aria-labelledby="navbarDropdownMenuLink">
                         </div>
                     </li>
-                    <link rel="stylesheet"
-                          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-                    <!-- The form -->
-                    <form class="example">
-                        <label>
-                            <input type="text" placeholder="Search.." name="q">
-                        </label>
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                    </form>
-                    {#                    <li>#}
-                    {#                        <form id="form" role="search" action="{% url "search_results" %}">#}
-                    {#                            <input type="search" id="query" name="q"#}
-                    {#                                   placeholder="Search..."#}
-                    {#                                   aria-label="Search through site content">#}
-                    {#                            <button>Search</button>#}
-                    {#                        </form>#}
-                    {#                    </li>#}
+                    <br>
+                    <br>
+                    <br>
 
                 </ul>
+
+                {#                    <li class="nav-item">#}
+                {#                        <a class="nav-link waves-effect waves-light"><i class="fab fa-twitter"></i></a>#}
+                {#                    </li>#}
+                {#                    <li class="nav-item">#}
+                {#                        <a class="nav-link waves-effect waves-light"><i class="fab fa-google-plus-g"></i></a>#}
+                {#                    </li>#}
+                {#                    <li class="nav-item">#}
+                {#                        <a class="nav-link waves-effect waves-light"><i class="fab fa-facebook"></i></a>#}
+                {#                    </li>#}
+
+
+                <!-- The form -->
+                <form class="example">
+                    <label>
+                        <input type="text" placeholder="Search.." name="q">
+                    </label>
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+                {#                    <li>#}
+                {#                        <form id="form" role="search" action="{% url "search_results" %}">#}
+                {#                            <input type="search" id="query" name="q"#}
+                {#                                   placeholder="Search..."#}
+                {#                                   aria-label="Search through site content">#}
+                {#                            <button>Search</button>#}
+                {#                        </form>#}
+                {#                    </li>#}
+
             </div>
         </div>
     </nav>
@@ -325,7 +317,7 @@
                 <p><a href="https://www.linkedin.com/in/radu-iordache-python23849013/">Radu Iordache</a></p>
                 <p><a href="https://www.linkedin.com/in/soare-alexandru-554b72136/">Alexandru Soare</a></p>
                 <p><a href="https://www.linkedin.com/in/soare-alexandru-554b72136/">Sebastian Gramada</a></p>
-                <p><a href="https://www.linkedin.com/in/soare-alexandru-554b72136/">Filip Titov</a></p>
+                <p><a href="https://www.linkedin.com/in/filip-titov-489362218">Filip Titov</a></p>
             </div>
             <!--/.First column-->
             <hr class="w-100 clearfix d-sm-none">
@@ -412,7 +404,10 @@
     <!--Call to action-->
     <div class="call-to-action text-center my-4">
         <h4 class="mb-5">Feedback QR CODE</h4>
-        <h5 class="mb-5">Let us know what you think about us!!!</h5>
+        <h5 class="mb-5">
+            <marquee behavior="scroll" direction="left">Let us know what you think about us!!!</marquee>
+        </h5>
+        {#        <h5 class="mb-5">Let us know what you think about us!!!</h5>#}
         <ul class="list-unstyled list-inline">
 
             <!-- Include Bootstrap for styling -->
@@ -429,7 +424,8 @@
     <!--            <body>-->
 
     <a class="container-fluid">
-        {#        <span class="container-fluid">#}
+                <span class="container-fluid"></span>
+    </a>
 
 
         <div class="text-center">
@@ -451,55 +447,56 @@
 
 
         {#            </span>#}
-        <p><a class="item" style="font-family: sans-serif" href="#">Phone: +40762362909</a></p>
-        <p><a class="item" style="font-family: sans-serif" href="#">E-mail:
+        <p><a class="item" style="font-family: sans-serif" href="tel:+40762362909">Phone: +40762362909</a></p>
+        <p><a class="item" style="font-family: sans-serif" href="mailto:bistro.p2022@gmail.com">E-mail:
             bistro.p2022@gmail.com</a></p>
         <a href="https://facebook.com"><i class="fab fa-facebook" style="font-size:15px;color:cadetblue;"></i></a>
         <a href="https://myaccount.google.com/"><i class="fab fa-google plus" style="font-size:15px;color:red;"></i></a>
-        <a href="https://twitter.com/i/flow/login>"><i class="fab fa-twitter" style="font-size:15px;color:blue;"></i></a>
+        <a href="https://twitter.com/i/flow/login>"><i class="fab fa-twitter"
+                                                       style="font-size:15px;color:blue;"></i></a>
         <a href="https:///www.instagram.com/"><i class="fab fa-instagram" style="font-size:15px;color:white;"></i></a>
-    <!--    <div class="form-horizontal">-->
-    <!--        <div class="form-group">-->
-    <!--            <label class="control-label col-sm-2"-->
-    <!--                   for="content">-->
-    <!--                Content:-->
-    <!--            </label>-->
-    <!--            <div class="col-sm-10">-->
+        <!--    <div class="form-horizontal">-->
+        <!--        <div class="form-group">-->
+        <!--            <label class="control-label col-sm-2"-->
+        <!--                   for="content">-->
+        <!--                Content:-->
+        <!--            </label>-->
+        <!--            <div class="col-sm-10">-->
 
-    <!--                &lt;!&ndash; Input box to enter the-->
-    <!--                    required data &ndash;&gt;-->
-    <!--                <input type="text" size="60"-->
-    <!--                       maxlength="60" class="form-control"-->
-    <!--                       id="content" placeholder="Enter content"/>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--        <div class="form-group">-->
-    <!--            <div class="col-sm-offset-2 col-sm-10">-->
+        <!--                &lt;!&ndash; Input box to enter the-->
+        <!--                    required data &ndash;&gt;-->
+        <!--                <input type="text" size="60"-->
+        <!--                       maxlength="60" class="form-control"-->
+        <!--                       id="content" placeholder="Enter content"/>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--        <div class="form-group">-->
+        <!--            <div class="col-sm-offset-2 col-sm-10">-->
 
-    <!--                &lt;!&ndash; Button to generate QR Code for-->
-    <!--                 the entered data &ndash;&gt;-->
-    <!--                <button type="button" class=-->
-    <!--                        "btn btn-default" id="generate">-->
-    <!--                    Generate-->
-    <!--                </button>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--    </div>-->
-    </div>
-
-
-    <!--/.Call to action-->
-
-    <!--Copyright-->
-    <div class="footer-copyright py-3 text-center">
-        <div class="container-fluid">
-            © 2022 Copyright: <a href="https://www.MDBootstrap.com"> Bistro_P </a>
-
+        <!--                &lt;!&ndash; Button to generate QR Code for-->
+        <!--                 the entered data &ndash;&gt;-->
+        <!--                <button type="button" class=-->
+        <!--                        "btn btn-default" id="generate">-->
+        <!--                    Generate-->
+        <!--                </button>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--    </div>-->
         </div>
 
 
-    </div>
-    <!--/.Copyright-->
+        <!--/.Call to action-->
+
+        <!--Copyright-->
+        <div class="footer-copyright py-3 text-center">
+            <div class="container-fluid">
+                © 2022 Copyright: <a href="https://www.MDBootstrap.com"> Bistro_P </a>
+
+            </div>
+
+
+        </div>
+        <!--/.Copyright-->
 </footer>
 <!--/.Footer-->
 <script type="text/javascript"
