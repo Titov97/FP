@@ -2,9 +2,10 @@
 
 {% block content %}
     {% if query %}
+        <ul>
         {% for rez in results %}
 {#            {{ rez.get_url }} #}
-            Recipe: {{ rez.name }},
+          <li>  Recipe: {{ rez.name }},</li>
             <br>
             created by: {{ rez.created_by }},
             <br>
@@ -12,6 +13,7 @@
             <br>
 {#            {{ rez.name }}#}
         {% endfor %}
+        </ul>
     {% endif %}
 
 {% endblock %}

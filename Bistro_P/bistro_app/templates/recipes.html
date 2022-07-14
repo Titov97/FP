@@ -1,6 +1,24 @@
 {% extends 'base.html' %}
 
-{% block content%}
-    <h1>Welcome to the Bistro_P Recipes</h1>
-        <p>This site keeps track of your Recipes</p>
+{% block content %}
+
+    <div class="view">
+        <li><p>
+            <h1>Welcome to the Bistro_P Recipes</h1> </p>  </li>
+        <li><p>This site keeps track of your Recipes</p></li>
+
+        <ul>
+            <li class="">
+                {% for rec in recipes %}
+                    <li>{{ rec.name }} /
+                        {% for ing in rec.ingredients.all %}
+                            {{ ing }}
+                        {% endfor %}
+                        / {{ rec.sale_price }}
+                    </li>
+                {% endfor %}
+
+            </li>
+        </ul>
+    </div>
 {% endblock %}
