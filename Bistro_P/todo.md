@@ -1,36 +1,36 @@
 uer: Adi993 pass: Gogosar1!
 
 Alex:
+- menu page - clarificari
+- de introdus date in fisierul ingredients (20-30)
+- de facut html pt:
+                   - Special Offers
+                   - Menu
+                   -
 
-- homepage - done
-- menu page
-- navbar
+
+de gasit poze pt meniuri si retete
+de modificat baza de date la retete si special offers adica de creeat un spatiu pt imagini 
+
+-
 
 
-Radu:
 
-- contact page - / feedback - done
+Radu:- 
 - recipe_create_page ?? clarificari
-- 
+
 
 Sebi:
-
-- checkout
-- add to cart
-- cart/ open order
+- checkout ??
+- add to cart ??
+- cart/ open order ??
 
 Filip:
-
-- login - done
-- register - done
-- recover_pass flow (4 templates) - done
-
 
 
 idei de lucru:
 
-Avantaje utilizator: - ingredientele mele - 90% done
-                     - retetele mele - 90% done
+Avantaje utilizator: -
                      - search retete - Radu
                      - google maps - Radu
                      - retete favorite - Radu
@@ -38,10 +38,32 @@ Avantaje utilizator: - ingredientele mele - 90% done
                      
 
 noi taskuri :
-- de mutat in footer contact, fb, twiter, google plus
-- de facut link la qr code - done
-- self reference foreign key pentru categorii
+- 
+- 
+- self reference foreign key pentru categorii ????
 - import de ingrediente si retete din csv sau xsl - Radu
-- Stilizare butoane footer si buton User dupa autentificare 
+
 - Rutele login/logout/change_pass/sign_up
+
+-Alex 
+ de bagat in xcel ingrediente, cantitati
+
+
+
+
+DONE:
+-de facut link la qr code - done
+- Stilizare butoane footer si buton User dupa autentificare Done
+ ingredientele mele - 90% done
+- retetele mele - 90% done
+ login - done
+- register - done
+- recover_pass flow (4 templates) - done
+-contact page - / feedback - done
+- navbar - done
+- homepage - done
+
+
+
+De intrebat pe tavi:
 

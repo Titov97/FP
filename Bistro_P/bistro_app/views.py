@@ -70,7 +70,7 @@ def success_view(request):
 
 
 class SignUpView(CreateView):
-    template_name = 'registration/sign_up.html'
+    template_name = 'registration/teste/templates/registration/sign_up.html'
     success_url = reverse_lazy('index')
     form_class = SignUpForm
 
@@ -110,3 +110,9 @@ def get_open_cart(request):
     if open_cart is None:
         open_cart = Order.objects.create(user=request.user, status='open')
     return open_cart
+
+
+def special_view(request):
+    query = request.GET.get('query', '')
+    return render(request, "special.html", {"query": query})
+

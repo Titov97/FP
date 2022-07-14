@@ -1,10 +1,14 @@
-from django.contrib import admin
 from django.contrib.auth.views import LogoutView, LoginView
 from django.urls import path
 
 from bistro_app import views
 # from bistro_app.views import hello
-from bistro_app.views import contact_view, MyPasswordChangeView,  search_view
+from bistro_app.views import contact_view, MyPasswordChangeView, search_view, special_view
+
+
+class SpecialOffersView:
+    pass
+
 
 urlpatterns = [
 
@@ -20,4 +24,5 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     path('search/', search_view, name="search_results"),
     path('cart/', views.open_cart_view, name="open_cart"),
+    path('special/', special_view, name='special')
 ]
