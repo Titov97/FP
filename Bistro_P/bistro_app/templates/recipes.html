@@ -8,13 +8,17 @@
         <li><p>This site keeps track of your Recipes</p></li>
 
         <ul>
-            <li class="">
+            <li class="container">
+            <div class="row">
                 {% for rec in recipes %}
-                    <li>{{ rec.name }} /
-                        {% for ing in rec.ingredients.all %}
-                            {{ ing }}
+                    <li> <div class="thumbnail"><img src="{{ rec.recipe_img.url }}" style="width:100px"></div>
+                        Reteta: {{ rec.name }} /
+                    <br>
+                         Ingrediente : {% for ing in rec.get_parents.name %}
+                            <li>  {{ ing }}</li> /
                         {% endfor %}
-                        / {{ rec.sale_price }}
+                        / {{ rec.sale_price }} Lei
+                    </div>
                     </li>
                 {% endfor %}
 

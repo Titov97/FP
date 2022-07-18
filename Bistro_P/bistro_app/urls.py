@@ -1,10 +1,11 @@
 from django.contrib import admin
 from django.contrib.auth.views import LogoutView, LoginView
 from django.urls import path
-
+from django.conf.urls.static import static
 from bistro_app import views
 # from bistro_app.views import hello
 from bistro_app.views import contact_view, MyPasswordChangeView,  search_view
+from bistro_project import settings
 
 urlpatterns = [
 
@@ -21,3 +22,6 @@ urlpatterns = [
     path('search/', search_view, name="search_results"),
     path('cart/', views.open_cart_view, name="open_cart"),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
