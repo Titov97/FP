@@ -44,8 +44,8 @@
                 <tr>
                     <td><img src="{{ rec.recipe_img.url }}" style="width:50px"></td>
                     <td>{{ rec.name }}</td>
-                    <td>{% for ing in rec.get_parents.name %}
-                            <li>  {{ ing }}</li> /
+                    <td>{% for ing in rec.get_parents %}
+                            {{ ing }}
                         {% endfor %}</td>
 
                     <td>{{ rec.sale_price }}</td>
