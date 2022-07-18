@@ -42,7 +42,8 @@
 
             {% for rec in recipes %}
                 <tr>
-                    <td><img src="{{ rec.recipe_img.url }}" style="width:50px"></td>
+
+                    <td><marquee behavior="scroll" direction="left"><img src="{{ rec.recipe_img.url }}" style="width:50px"></marquee></td>
                     <td>{{ rec.name }}</td>
                     <td>{% for ing in rec.get_parents %}
                             {{ ing }}
