@@ -1,28 +1,58 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+  background-color: #96D4D4;
+}
+    </style>
+    <div class="container" >
+{#        <li><p>#}
+{#            <h1>Welcome to the Bistro_P Recipes</h1> </p>  </li>#}
+{#        <li><p>This site keeps track of your Recipes</p></li>#}
+{##}
+{#        <ul>#}
+{#            <li >#}
+{#            <div class="row">#}
+{#                {% for rec in recipes %}#}
+{#                    <li> <div class="thumbnail"><img src="{{ rec.recipe_img.url }}" style="width:100px"></div>#}
+{#                        Reteta: {{ rec.name }} /#}
+{#                    <br>#}
+{#                         Ingrediente : {% for ing in rec.get_parents.name %}#}
+{#                            <li>  {{ ing }}</li> /#}
+{#                        {% endfor %}#}
+{#                        / {{ rec.sale_price }} Lei#}
+{#                    </div>#}
+{#                    </li>#}
+{#                {% endfor %}#}
+{##}
+{#            </li>#}
+{#        </ul>#}
+        <div style="position:relative; left:60px;  " class="container flex-column">>
 
-    <div class="view">
-        <li><p>
-            <h1>Welcome to the Bistro_P Recipes</h1> </p>  </li>
-        <li><p>This site keeps track of your Recipes</p></li>
+        <table style="width:450%" class="container flex-column">
+            <h2 "color:black">Recipes</h2>
+            <th style="width:35%">Recipe Image </th>
+            <th style="width:35%">Recipe name</th>
+            <th style="width:35%">Recipe Ingredients</th>
+            <th style="width:35%">Recipe price</th>
 
-        <ul>
-            <li class="container">
-            <div class="row">
-                {% for rec in recipes %}
-                    <li> <div class="thumbnail"><img src="{{ rec.recipe_img.url }}" style="width:100px"></div>
-                        Reteta: {{ rec.name }} /
-                    <br>
-                         Ingrediente : {% for ing in rec.get_parents.name %}
+            {% for rec in recipes %}
+                <tr>
+                    <td><img src="{{ rec.recipe_img.url }}" style="width:50px"></td>
+                    <td>{{ rec.name }}</td>
+                    <td>{% for ing in rec.get_parents.name %}
                             <li>  {{ ing }}</li> /
-                        {% endfor %}
-                        / {{ rec.sale_price }} Lei
-                    </div>
-                    </li>
-                {% endfor %}
+                        {% endfor %}</td>
 
-            </li>
-        </ul>
+                    <td>{{ rec.sale_price }}</td>
+{#
+                </tr>
+            {% endfor %}
+        </table>
+
     </div>
 {% endblock %}
