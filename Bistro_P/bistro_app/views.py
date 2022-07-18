@@ -94,7 +94,7 @@ def search_view(request):
     query = ""
     if request.method == "GET":
         query = request.GET.get("q")
-        if query == " ":
+        if query == "":
             query = "No results"
         results = Recipe.objects.filter(Q(ingredients__ingredient__name__icontains=query) | Q(name__icontains=query))
     return render(request, "search_results.html", {"query": query, "results": results})
