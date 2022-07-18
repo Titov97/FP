@@ -6,7 +6,11 @@
             border: 1px solid black;
         }
         th, td {
-  background-color: #96D4D4;
+     background-color: #96D4D4;
+        }
+    td.fitwidth {
+    width: 1px;
+    white-space: nowrap;
 }
     </style>
     <div class="container" >
@@ -31,9 +35,8 @@
 {##}
 {#            </li>#}
 {#        </ul>#}
-        <div style="position:relative; left:60px;  " class="container flex-column">>
-
-        <table style="width:450%" class="container flex-column">
+        <div style="position:relative; left:60px;  class="container flex-column">>
+        <table style="width: 100%; white-space:nowrap; border-collapse: collapse;" class="container flex">
             <h2 "color:black">Recipes</h2>
             <th style="width:35%">Recipe Image </th>
             <th style="width:35%">Recipe name</th>
@@ -43,7 +46,7 @@
             {% for rec in recipes %}
                 <tr>
 
-                    <td><marquee behavior="scroll" direction="left"><img src="{{ rec.recipe_img.url }}" style="width:50px"></marquee></td>
+                    <td><marquee behavior="scroll" direction="right"><img src="{{ rec.recipe_img.url }}" style="width:50px"></marquee></td>
                     <td>{{ rec.name }}</td>
                     <td>{% for ing in rec.get_parents %}
                             {{ ing }}
