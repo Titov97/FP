@@ -48,7 +48,16 @@ class OrderView(View):
         return render(request, template_name="order.html", context={"orders": Order.objects.all()})
 
 
+# class ContactView(View):
+#     template_name = 'contact.html'
+#     success_url = reverse_lazy('index')
+#     form_class = ContactForm
+
+
 def contact_view(request):
+    template_name = 'contact.html'
+    success_url = reverse_lazy('index')
+    form_class = ContactForm
     if request.method == 'GET':
         form = ContactForm()
     else:
@@ -61,7 +70,7 @@ def contact_view(request):
                 send_mail(subject, message, from_email, ['bistro.p2022@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
-            return redirect('success')
+            return redirect(success_url)
     return render(request, "contact.html", {'form': form})
 
 
@@ -139,8 +148,10 @@ def get_open_cart(request):
 def check_out(request):
     return render(request, template_name='checkout.html')
 
+
 def cancel_order(request):
     return render(request, template_name='cancel.html')
+
 
 def succes_order(request):
     return render(request, template_name='success.html')
@@ -149,4 +160,3 @@ def succes_order(request):
 def special_view(request):
     query = request.GET.get('query', '')
     return render(request, "special.html", {"query": query})
-
