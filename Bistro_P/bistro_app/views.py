@@ -15,6 +15,8 @@ from django.views import View
 from bistro_app.models import Ingredient, Recipe, Menu, Order
 
 
+
+
 # -----cart------
 # from django.shortcuts import render, get_object_or_404
 # from .models import CartCategory, CartProduct
@@ -110,3 +112,14 @@ def get_open_cart(request):
     if open_cart is None:
         open_cart = Order.objects.create(user=request.user, status='open')
     return open_cart
+
+
+# --------
+def check_out(request):
+    return render(request, template_name='checkout.html')
+
+def cancel_order(request):
+    return render(request, template_name='cancel.html')
+
+def succes_order(request):
+    return render(request, template_name='success.html')

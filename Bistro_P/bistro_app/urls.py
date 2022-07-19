@@ -20,4 +20,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     path('search/', search_view, name="search_results"),
     path('cart/', views.open_cart_view, name="open_cart"),
+    path('checkout/', views.check_out, name="checkout"),
+    path('cancel/', views.cancel_order, name="cancel"),
+    path('succes/', views.succes_order, name="succes"),
 ]
