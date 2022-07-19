@@ -20,6 +20,7 @@ class Ingredient(models.Model):
     def __repr__(self):
         return self.__str__
 
+
 class RecipeIngredient(models.Model):
     ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
     quantity = models.FloatField()
@@ -30,13 +31,13 @@ class RecipeIngredient(models.Model):
     def __repr__(self):
         return self.__str__
 
+
 class Recipe(models.Model):
     name = models.CharField(max_length=128)
     # created_by = models.CharField(max_length=128)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     ingredients = models.ManyToManyField(RecipeIngredient)
-    sale_price = models.DecimalField(max_digits=10,decimal_places=2)
-    recipe_img = models.FileField(upload_to='media', default="default.jpg")
+    sale_price = models.DecimalField(max_digits=10, decimal_places=2)
 
     def production_price(self):
         # total_cost = 0
@@ -54,6 +55,7 @@ class Recipe(models.Model):
 
     def __repr__(self):
         return self.name
+
 
 class Menu(models.Model):
     menu_name = models.CharField(max_length=255)
@@ -83,4 +85,3 @@ class OrderItem(models.Model):
     quantity = models.FloatField()
     # price = models.DecimalField(max_digits= 10, decimal_places=2)
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
-

@@ -70,7 +70,7 @@ def success_view(request):
 
 
 class SignUpView(CreateView):
-    template_name = 'registration/teste/templates/registration/sign_up.html'
+    template_name = 'registration/sign_up.html'
     success_url = reverse_lazy('index')
     form_class = SignUpForm
 
@@ -87,6 +87,29 @@ class MyPasswordChangeView(PasswordChangeView):
 class MyLogoutView(LogoutView):
     template_name = 'registration/logout.html'
     success_url = reverse_lazy('index')
+
+
+def bar_view(request):
+    query = request.GET.get('query', '')
+    return render(request, "bar.html", {"query": query})
+
+
+def food_view(request):
+    query = request.GET.get('query', '')
+    return render(request, "food.html", {"query": query})
+
+
+def deserts_view(request):
+    query = request.GET.get('query', '')
+    return render(request, "deserts.html", {"query": query})
+
+
+# class FoodView(CreateView):
+#     template_name = 'food.html'
+#
+#
+# class DesertsView(CreateView):
+#     template_name = 'deserts.html'
 
 
 def search_view(request):
