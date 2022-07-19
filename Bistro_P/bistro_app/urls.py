@@ -4,7 +4,8 @@ from django.urls import path
 
 from bistro_app import views
 # from bistro_app.views import hello
-from bistro_app.views import contact_view, MyPasswordChangeView,  search_view
+from bistro_app.views import contact_view, MyPasswordChangeView, search_view, bar_view, food_view, deserts_view, \
+    special_view
 
 urlpatterns = [
 
@@ -20,13 +21,13 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     path('search/', search_view, name="search_results"),
     path('cart/', views.open_cart_view, name="open_cart"),
-    path('special/', views.special_view, name="special"),
-    path('checkout/', views.check_out, name="checkout"),
-    path('cancel/', views.cancel_order, name="cancel"),
-    path('succes/', views.succes_order, name="succes"),
     path('bar/', bar_view, name='bar'),
     path('food/', food_view, name='food'),
     path('deserts/', deserts_view, name='deserts'),
     path('special/', special_view, name='special'),
 
+    path('special/', views.special_view, name="special"),
+    path('checkout/', views.check_out, name="checkout"),
+    path('cancel/', views.cancel_order, name="cancel"),
+    path('succes/', views.succes_order, name="succes"),
 ]
