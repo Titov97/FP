@@ -56,7 +56,7 @@ class OrderView(View):
 
 def contact_view(request):
     template_name = 'contact.html'
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('respond')
     form_class = ContactForm
     if request.method == 'GET':
         form = ContactForm()
@@ -160,3 +160,7 @@ def succes_order(request):
 def special_view(request):
     query = request.GET.get('query', '')
     return render(request, "special.html", {"query": query})
+
+
+def contact2_view(request):
+    return render(request, template_name="contact2.html")

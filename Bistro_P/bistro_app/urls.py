@@ -25,9 +25,9 @@ urlpatterns = [
     path('food/', food_view, name='food'),
     path('deserts/', deserts_view, name='deserts'),
     path('special/', special_view, name='special'),
-
     path('special/', views.special_view, name="special"),
     path('checkout/', views.check_out, name="checkout"),
     path('cancel/', views.cancel_order, name="cancel"),
-    path('succes/', views.succes_order, name="succes"),
+    path('succes/', views.succes_order, name="success"),
+    path('respond/', views.contact2_view, name='respond')
 ]
