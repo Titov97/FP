@@ -135,6 +135,17 @@ def get_open_cart(request):
     return open_cart
 
 
+# --------
+def check_out(request):
+    return render(request, template_name='checkout.html')
+
+def cancel_order(request):
+    return render(request, template_name='cancel.html')
+
+def succes_order(request):
+    return render(request, template_name='success.html')
+
+
 def special_view(request):
     query = request.GET.get('query', '')
     return render(request, "special.html", {"query": query})
