@@ -4,12 +4,12 @@
     {% if query %}
         <ul>
         {% for rez in results %}
-{#            {{ rez.get_url }} #}
+            {{ rez.get_url }}
           <li>  Recipe: {{ rez.name }},</li>
             <br>
-            created by: {{ rez.created_by }},
+            <li>created by: {{ rez.created_by }} </li>,
             <br>
-            with {{ rez.ingredients.get_parents }},
+            <li>with {{ rez.get_parents }} </li>,
             <br>
 {#            {{ rez.name }}#}
         {% endfor %}
