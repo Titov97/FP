@@ -15,8 +15,6 @@ from django.views import View
 from bistro_app.models import Ingredient, Recipe, Menu, Order
 
 
-
-
 # -----cart------
 # from django.shortcuts import render, get_object_or_404
 # from .models import CartCategory, CartProduct
@@ -123,3 +121,9 @@ def cancel_order(request):
 
 def succes_order(request):
     return render(request, template_name='success.html')
+
+
+def special_view(request):
+    query = request.GET.get('query', '')
+    return render(request, "special.html", {"query": query})
+

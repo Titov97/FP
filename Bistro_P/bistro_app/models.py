@@ -36,6 +36,7 @@ class Recipe(models.Model):
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     ingredients = models.ManyToManyField(RecipeIngredient)
     sale_price = models.DecimalField(max_digits=10,decimal_places=2)
+    recipe_img = models.FileField(upload_to='media', default="default.jpg")
 
     def production_price(self):
         # total_cost = 0
