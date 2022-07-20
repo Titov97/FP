@@ -66,4 +66,8 @@ DONE:
 
 
 De intrebat pe tavi:
+pagina de open cart templ view url
+request add item to cart apoi redirect catre url open cart
+request pt checkout cu scadere de stoc.
+functii de preferat (ceva cu return render?)
 

@@ -37,7 +37,7 @@ class Recipe(models.Model):
     # created_by = models.CharField(max_length=128)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     ingredients = models.ManyToManyField(RecipeIngredient)
-    sale_price = models.DecimalField(max_digits=10,decimal_places=2)
+    sale_price = models.DecimalField(max_digits=10, decimal_places=2)
     recipe_img = models.FileField(upload_to='media', default="default.jpg")
 
     def production_price(self):
@@ -58,15 +58,29 @@ class Recipe(models.Model):
         return self.name
 
 
-class Menu(models.Model):
+class Category(models.Model):
+    name = models.CharField(max_length=255)
+    parent_category = models.ForeignKey("self", on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.name}"
+
+
+class SalesMenu(models.Model):
     menu_name = models.CharField(max_length=255)
     sale_price = models.FloatField()
+    recipes = models.ManyToManyField(Recipe)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.menu_name}"
+
 
 
 class MenuItem(models.Model):
     recipe = models.ForeignKey(RecipeIngredient, on_delete=models.CASCADE)
     quantity = models.FloatField()
-    menu = models.ForeignKey(Menu, on_delete=models.CASCADE)
+    menu = models.ForeignKey(SalesMenu, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.recipe} {self.quantity}"
@@ -82,8 +96,9 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
-    recipe = models.ForeignKey(RecipeIngredient, on_delete=models.CASCADE)
-    quantity = models.FloatField()
+    sales_menu = models.ForeignKey(SalesMenu, on_delete=models.CASCADE)
+    quantity = models.IntegerField(default=1)
     # price = models.DecimalField(max_digits= 10, decimal_places=2)
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
+
 

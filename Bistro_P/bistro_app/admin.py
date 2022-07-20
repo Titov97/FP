@@ -19,9 +19,10 @@ class ImportRecipeAdmin2(ImportExportModelAdmin):
 # admin.site.register(Ingredient)
 
 # admin.site.register(Recipe)
-admin.site.register(Menu)
+admin.site.register(SalesMenu)
 admin.site.register(Order)
 admin.site.register(OrderItem)
 admin.site.register(RecipeIngredient)
+admin.site.register(Category)
 admin.site.register(Ingredient, ImportIngredientAdmin)
 admin.site.register(Recipe, ImportRecipeAdmin2)

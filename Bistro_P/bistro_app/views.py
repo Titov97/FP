@@ -12,7 +12,7 @@ from .forms import ContactForm, SignUpForm
 from django.views.generic import CreateView, ListView
 from django.views import View
 
-from bistro_app.models import Ingredient, Recipe, Menu, Order
+from bistro_app.models import Ingredient, Recipe, SalesMenu, Order
 
 
 # -----cart------
@@ -40,7 +40,7 @@ class RecipeView(View):
 
 class MenuView(View):
     def get(self, request):
-        return render(request, template_name="menu.html", context={"menu": Menu.objects.all()})
+        return render(request, template_name="menu.html", context={"menu": SalesMenu.objects.all()})
 
 
 class OrderView(View):

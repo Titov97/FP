@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 import csv
-from bistro_app.models import Ingredient, Menu
+from bistro_app.models import Ingredient, SalesMenu
 
 
 class IngredientsForm(forms.ModelForm):
