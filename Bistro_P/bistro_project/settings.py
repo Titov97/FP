@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-8hz+p@+67g=$hjfvc0eu1j(adboeih47k5zi+g+)c&wu7e9x$+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bistrop.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
