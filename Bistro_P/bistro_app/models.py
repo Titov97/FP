@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.urls import reverse
 
 
 class Ingredient(models.Model):
@@ -19,6 +20,7 @@ class Ingredient(models.Model):
 
     def __repr__(self):
         return self.__str__
+
 
 
 class RecipeIngredient(models.Model):
@@ -56,6 +58,9 @@ class Recipe(models.Model):
 
     def __repr__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('recipe_detail', args=[str(self.id)])
 
 
 class Category(models.Model):

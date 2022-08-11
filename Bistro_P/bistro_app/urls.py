@@ -11,7 +11,9 @@ urlpatterns = [
 
     path('', views.home, name='index'),
     path('ingredients/', views.IngredientsView.as_view(), name='ingredients'),
-    path('recipes/', views.RecipeView.as_view(), name='recipes'),
+    path('recipes/', views.RecipeView.as_view(), name='recipes_table'),
+    path('recipes/recipes_list/', views.RecipeListView.as_view(), name='recipe_list'),
+    path('recipes_details/<int:pk>/', views.RecipeDetailView.as_view(), name='recipe_detail'),
     path('menu/', views.MenuView.as_view(), name='menu'),
     path('order/', views.OrderView.as_view(), name='order'),
     path('contact/', contact_view, name='contact'),

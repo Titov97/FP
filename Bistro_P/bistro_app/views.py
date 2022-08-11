@@ -9,9 +9,9 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 
 from .forms import ContactForm, SignUpForm
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView
 from django.views import View
-
+from django.views.generic import ListView, DetailView
 from bistro_app.models import Ingredient, Recipe, SalesMenu, Order
 
 
@@ -35,7 +35,17 @@ class IngredientsView(View):
 
 class RecipeView(View):
     def get(self, request):
-        return render(request, template_name="recipes.html", context={"recipes": Recipe.objects.all()})
+        return render(request, template_name="recipes_table.html", context={"recipes": Recipe.objects.all()})
+
+
+class RecipeListView(ListView):
+    model = Recipe
+    template_name = 'recipe_list.html'
+
+
+class RecipeDetailView(DetailView):
+    model = Recipe
+    template_name = 'recipe_detail.html'
 
 
 class MenuView(View):

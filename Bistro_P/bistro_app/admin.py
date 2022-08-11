@@ -2,6 +2,8 @@ from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
 from import_export import resources
 from bistro_app.models import Ingredient, Recipe
+
+from .models import SalesMenu, Order, OrderItem, RecipeIngredient, Category
 from .resource import ReportResourceIngredient, ReportResourceRecipe
 # Register your models here.
 # from Bistro_P.bistro_app.models import *

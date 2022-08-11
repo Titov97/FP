@@ -1,0 +1,15 @@
+<!-- recipe_detail.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+  <h2>{{ object.name }}</h2>
+  <p>{{ object.remarks }}</p>
+  <p>{{ object.ingredients.ingredient }}</p>
+  <p> <img src="{{ recipe.recipe_img.url }}" style="width:100px"> </p>
+  <p>{{ object.sale_price }}</p>
+  <p>{{ object.created_by }}</p>
+</div>
+
+
+{% endblock %}
