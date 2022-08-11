@@ -39,9 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',  # new
+    'django.contrib.sitemaps',  # new
     'bistro_app',
     'import_export',
     ]
+
+SITE_ID = 1  # new
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
