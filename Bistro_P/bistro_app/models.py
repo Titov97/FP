@@ -51,7 +51,7 @@ class Recipe(models.Model):
                 self.ingredients.all())
 
     def get_parents(self):
-        return ",".join([str(p) for p in self.ingredients.all()])
+        return " , ".join([str(p) for p in self.ingredients.all()])
 
     def __str__(self):
         return f"{self.name} , {self.get_parents()}"

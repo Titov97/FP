@@ -2,14 +2,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div>
-  <h2>{{ object.name }}</h2>
-  <p>{{ object.remarks }}</p>
-  <p>{{ object.ingredients.ingredient }}</p>
-  <p> <img src="{{ recipe.recipe_img.url }}" style="width:100px"> </p>
-  <p>{{ object.sale_price }}</p>
-  <p>{{ object.created_by }}</p>
-</div>
+<div class="card" style="width: 38rem;">
+  <div class="card-body">
+  <h2 class="card-title" >Recipe name : {{ object.name }}</h2>
+  <p class="card-text">Description : {{ object.remarks }}</p>
+  <p class="card-text">Ingredients :
+    {% for ing in object.get_parents %}
+                          {{ ing }}
+                        {% endfor %}
 
+    </p>
+  <p> <img src="{{ recipe.recipe_img.url }}" style="width:100px"> </p>
+  <p class="card-text"> Price : {{ object.sale_price }}</p>
+  <p class="card-text"> Created By : {{ object.created_by }}</p>
+    <a href="#" class="btn btn-primary">Add to Cart</a>
+</div>
+</div>
 
 {% endblock %}
