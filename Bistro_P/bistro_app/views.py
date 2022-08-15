@@ -1,6 +1,8 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import PasswordChangeView, LoginView, LogoutView
 from django.db.models import Q
+from django.contrib.auth.views import PasswordChangeView
+from django.contrib.auth.views import PasswordChangeView
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.core.mail import send_mail, BadHeaderError
@@ -77,6 +79,32 @@ def contact_view(request):
 
 def success_view(request):
     return HttpResponse('Success! Thank you for your message.')
+
+
+class SignUpView(CreateView):
+    template_name = 'registration/sign_up.html'
+    success_url = reverse_lazy('home')
+    form_class = SignUpForm
+
+
+class MyPasswordChangeView(PasswordChangeView):
+    template_name = 'registration/change_pass.html'
+    success_url = reverse_lazy('login')
+
+
+
+
+class SignUpView(CreateView):
+    template_name = 'registration/sign_up.html'
+    success_url = reverse_lazy('home')
+    form_class = SignUpForm
+
+
+class MyPasswordChangeView(PasswordChangeView):
+    template_name = 'registration/change_pass.html'
+    success_url = reverse_lazy('login')
+
+
 
 
 class SignUpView(CreateView):
