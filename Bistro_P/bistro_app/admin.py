@@ -17,7 +17,7 @@ class ImportIngredientAdmin(ImportExportModelAdmin):
 class ImportRecipeAdmin2(ImportExportModelAdmin):
     resource_class = ReportResourceRecipe
 
-
+admin.site.site_header = "BistroP project"
 # admin.site.register(Ingredient)
 
 # admin.site.register(Recipe)
